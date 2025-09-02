@@ -27,15 +27,6 @@ const Experience = () => {
       color: 'from-accent-magenta to-primary-end'
     },
     {
-      type: 'project',
-      title: 'Hackathon Winner',
-      organization: 'Digital Innovation Challenge',
-      period: '2025',
-      description: 'Won first place for creating an accessible portfolio website using no-code platforms, demonstrating rapid prototyping and user-centered design skills.',
-      icon: HiStar,
-      color: 'from-accent-lavender to-primary'
-    },
-    {
       type: 'education',
       title: 'Bachelor\'s in Computer Science',
       organization: 'National Institute of Technology',

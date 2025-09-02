@@ -10,14 +10,12 @@ const About = () => {
   const skills = [
     'UI/UX Design',
     'Figma',
-    'Adobe Creative Suite',
     'Prototyping',
     'User Research',
     'Design Systems',
-    'React',
+    'React Native',
     'Python',
-    'Machine Learning',
-    'TensorFlow'
+    'Machine Learning'
   ];
 
   return (

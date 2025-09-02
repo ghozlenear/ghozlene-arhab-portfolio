@@ -28,12 +28,12 @@ const Projects = () => {
       gradient: 'from-accent-magenta to-primary-end'
     },
     {
-      title: 'Breast Cancer Prediction',
-      year: '2024-2025',
-      category: 'Healthcare AI',
-      description: 'Predictive model for breast cancer diagnosis using multiple machine learning algorithms and statistical analysis.',
-      tools: ['Python', 'SVM', 'Decision Tree', 'K-NN', 'K-Means', 'Bayesian Networks', 'scikit-learn'],
-      link: 'https://github.com/ghozlenear/breastcancer',
+      title: 'HearMe',
+      year: '2024',
+      category: 'Mental Health',
+      description: 'Mental health app with AI chatbot support, emergency calling features, and mood activity tracking.',
+      tools: ['React Native', 'Express', 'Figma', 'Node.js', 'AI Chatbot'],
+      link: 'https://github.com/ghozlenear/hearme',
       gradient: 'from-accent-lavender to-primary'
     },
     {
@@ -46,12 +46,12 @@ const Projects = () => {
       gradient: 'from-primary-end to-accent-magenta'
     },
     {
-      title: 'Portfolio (Hackathon)',
-      year: '2025',
-      category: 'No-Code Development',
-      description: 'Responsive portfolio website built during hackathon using no-code platform with accessibility optimizations.',
-      tools: ['Bubble', 'No-Code', 'Responsive Design', 'Accessibility'],
-      link: 'https://portfolionocode-60499.bubbleapps.io/version-test?debug_mode=true',
+      title: 'Mirae',
+      year: '2024',
+      category: 'E-commerce',
+      description: 'Beauty e-commerce mobile application with modern UI/UX and seamless shopping experience.',
+      tools: ['Figma', 'React Native', 'Node.js', 'REST API'],
+      link: 'https://github.com/ghozlenear/mirae',
       gradient: 'from-accent-rose to-primary'
     },
     {

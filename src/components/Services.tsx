@@ -22,8 +22,8 @@ const Services = () => {
     },
     {
       icon: HiTemplate,
-      title: 'Prototyping',
-      description: 'High-fidelity interactive prototypes that bring ideas to life and facilitate seamless development handoffs.',
+      title: 'Frontend Developer',
+      description: 'Building responsive, interactive web and mobile applications with modern frameworks and best practices.',
       color: 'from-accent-lavender to-primary'
     },
     {
