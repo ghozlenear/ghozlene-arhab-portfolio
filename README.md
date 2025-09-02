@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
+# Ghozlene Arhab - Portfolio
 
-## Project info
+A modern, responsive personal portfolio website with a dark girly aura theme showcasing UI/UX design work and AI projects.
 
-**URL**: https://lovable.dev/projects/9d409e8a-dacf-4456-b6fe-cd0709dfacb5
+## 🚀 Features
 
-## How can I edit this code?
+- **Dark Girly Aura Theme**: Beautiful gradient design with deep pink to purple color scheme
+- **Responsive Design**: Optimized for all devices and screen sizes
+- **Smooth Animations**: Powered by Framer Motion for elegant interactions
+- **Accessibility First**: Semantic HTML, ARIA attributes, and keyboard navigation
+- **SEO Optimized**: Meta tags, structured data, and optimized performance
+- **Modern Tech Stack**: Built with React, TypeScript, Tailwind CSS, and Vite
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: React Icons, Lucide React
+- **Build Tool**: Vite
+- **Package Manager**: npm
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9d409e8a-dacf-4456-b6fe-cd0709dfacb5) and start prompting.
+## 📦 Installation & Setup
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v16 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Quick Start
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd portfolio-ghozlene
+   ```
 
-Follow these steps:
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. **Start the development server**
+   ```bash
+   npm run dev
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. **Open your browser**
+   Navigate to `http://localhost:8080` (or the port shown in your terminal)
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Build for Production
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+npm run build
 ```
 
-**Edit a file directly in GitHub**
+### Preview Production Build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## 🎨 Design System
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The portfolio uses a carefully crafted design system with:
 
-## What technologies are used for this project?
+- **Colors**: HSL-based color palette with semantic tokens
+- **Typography**: Poppins font family with multiple weights
+- **Gradients**: Dynamic aura-inspired gradients with animations
+- **Components**: Reusable UI components with consistent styling
+- **Animations**: Smooth transitions and micro-interactions
 
-This project is built with:
+## 📱 Sections
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Hero**: Animated introduction with floating floral elements
+- **About**: Personal introduction with skills showcase
+- **Services**: Core competencies in design and AI
+- **Projects**: Featured work with detailed descriptions and tech stacks
+- **Experience**: Timeline of education and professional experience
+- **Testimonials**: Client feedback with interactive carousel
+- **Contact**: Contact form and social media links
+- **Footer**: Additional navigation and contact information
 
-## How can I deploy this project?
+## 🎯 Key Projects Featured
 
-Simply open [Lovable](https://lovable.dev/projects/9d409e8a-dacf-4456-b6fe-cd0709dfacb5) and click on Share -> Publish.
+1. **Movie Recommendations System** - Machine learning project using K-NN and neural networks
+2. **Object Detection** - Computer vision system with YOLOv4 and deep learning
+3. **Breast Cancer Prediction** - Healthcare AI using multiple ML algorithms
+4. **Facial Expression Recognition** - Real-time recognition with transfer learning
+5. **Portfolio (Hackathon)** - No-code development with accessibility focus
+6. **MedApollo** - Pharmaceutical mobile app with geolocation features
 
-## Can I connect a custom domain to my Lovable project?
+## 🌐 Browser Support
 
-Yes, you can!
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📧 Contact
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Email**: ghozlene.arhab@example.com
+- **LinkedIn**: [linkedin.com/in/ghozlene-arhab](https://linkedin.com/in/ghozlene-arhab)
+- **GitHub**: [github.com/ghozlenear](https://github.com/ghozlenear)
+- **Behance**: [behance.net/ghozlene](https://behance.net/ghozlene)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🤝 Contributing
+
+This is a personal portfolio, but suggestions and feedback are welcome! Feel free to open an issue or reach out directly.
+
+---
+
+**Made with ❤️ and lots of coffee by Ghozlene Arhab**

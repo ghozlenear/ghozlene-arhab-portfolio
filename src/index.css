@@ -1,42 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Dark Girly Aura Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark girly aura color palette */
+    --background: 270 15% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 270 20% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 270 20% 10%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Girly gradient colors */
+    --primary: 327 100% 64%;  /* Deep pink #ff4fa3 */
+    --primary-end: 282 93% 35%;  /* Deep purple #6a0dad */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 270 30% 20%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 270 20% 15%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent colors */
+    --accent-rose: 330 80% 70%;  /* Rose pink */
+    --accent-lavender: 270 60% 80%;  /* Lavender */
+    --accent-magenta: 300 100% 60%;  /* Magenta */
+    --accent: 270 30% 18%;
+    --accent-foreground: 0 0% 95%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 270 30% 25%;
+    --input: 270 30% 18%;
+    --ring: 327 100% 64%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Gradient definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-end)));
+    --gradient-aura: linear-gradient(45deg, 
+      hsl(var(--primary) / 0.3) 0%, 
+      hsl(var(--primary-end) / 0.2) 25%,
+      hsl(var(--accent-magenta) / 0.1) 50%,
+      hsl(var(--accent-rose) / 0.2) 75%,
+      hsl(var(--primary) / 0.3) 100%);
+    --gradient-card: linear-gradient(135deg, 
+      hsl(var(--card) / 0.8), 
+      hsl(var(--primary) / 0.1) 50%,
+      hsl(var(--primary-end) / 0.1));
+    
+    /* Glow effects */
+    --glow-primary: 0 0 30px hsl(var(--primary) / 0.5);
+    --glow-soft: 0 8px 32px hsl(var(--primary) / 0.2);
+    --shadow-elegant: 0 20px 40px -12px hsl(var(--primary) / 0.4);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +129,129 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-['Poppins',sans-serif];
+    background: var(--gradient-aura);
+    background-size: 400% 400%;
+    animation: aura-shift 15s ease-in-out infinite;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  /* Girly aura specific components */
+  .aura-background {
+    @apply relative overflow-hidden;
+  }
+  
+  .aura-background::before {
+    content: '';
+    @apply absolute inset-0 -z-10;
+    background: var(--gradient-aura);
+    background-size: 400% 400%;
+    animation: aura-shift 20s ease-in-out infinite;
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-aura {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.3);
+    box-shadow: var(--shadow-elegant);
+    transition: var(--transition-smooth);
+  }
+
+  .card-aura:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--glow-soft);
+  }
+
+  .btn-primary {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground font-medium px-6 py-3 rounded-xl;
+    transition: var(--transition-smooth);
+    box-shadow: var(--glow-soft);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-primary);
+  }
+
+  .glass-nav {
+    backdrop-filter: blur(20px);
+    background: hsl(var(--card) / 0.8);
+    border-bottom: 1px solid hsl(var(--border) / 0.3);
+  }
+
+  .skill-badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+    background: hsl(var(--primary) / 0.2);
+    border: 1px solid hsl(var(--primary) / 0.3);
+    color: hsl(var(--accent-lavender));
+  }
+
+  .project-card {
+    @apply card-aura p-6 rounded-2xl group cursor-pointer;
+  }
+
+  .project-card:hover .project-overlay {
+    @apply opacity-100;
+  }
+
+  .project-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 transition-all duration-300 rounded-2xl flex items-end p-6;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.8);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+}
+
+/* Keyframe animations */
+@keyframes aura-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+/* Reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
