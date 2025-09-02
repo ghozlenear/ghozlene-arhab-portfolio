@@ -197,7 +197,7 @@
   }
 
   .project-card {
-    @apply card-aura p-6 rounded-2xl group cursor-pointer;
+    @apply card-aura p-6 rounded-2xl cursor-pointer;
   }
 
   .project-card:hover .project-overlay {

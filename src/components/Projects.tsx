@@ -104,7 +104,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="project-card relative overflow-hidden"
+              className="project-card group relative overflow-hidden"
             >
               {/* Project Thumbnail/Gradient Background */}
               <div className={`h-48 bg-gradient-to-br ${project.gradient} rounded-xl mb-6 relative overflow-hidden`}>
