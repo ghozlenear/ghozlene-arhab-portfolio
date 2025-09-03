@@ -34,7 +34,6 @@ const Hero = () => {
         <img src={floralDecoration} alt="" className="w-32 h-32" />
       </motion.div>
 
-      {/* Main Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
