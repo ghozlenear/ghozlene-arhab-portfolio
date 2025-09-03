@@ -3,6 +3,12 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { HiExternalLink, HiCode } from 'react-icons/hi';
 import { SiPython, SiTensorflow, SiFlutter, SiPostgresql } from 'react-icons/si';
+import corideImg from '../assets/coride.png';
+import miraeImg from '../assets/mirae.png';
+import hearmeImg from '../assets/hearme.png';
+import mobizImg from '../assets/mobiz.png';
+import medapolloImg from '../assets/medapollo.png';
+import radioImg from '../assets/radio.png';
 
 const Projects = () => {
   const ref = useRef(null);
@@ -17,7 +23,7 @@ const Projects = () => {
       tools: ['figma','pixabay'],
       link: 'https://www.figma.com/proto/gWdZlJkECCmWv4K8g2vtvm/coride-service?page-id=0%3A1&node-id=1-752&viewport=147%2C94%2C0.69&t=pjOoL4EqBeogsJFv-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A332',
       gradient: 'from-primary to-accent-rose',
-      image: '/src/assets/coride.png'
+  image: corideImg
     },
      {
       title: 'Mirae',
@@ -27,7 +33,7 @@ const Projects = () => {
       tools: ['Figma', 'React Native', 'Node.js', 'REST API'],
       link: 'https://www.figma.com/proto/6LAmTkN42JeLxWmj94Qs9v/Mirae?page-id=0%3A1&node-id=211-310&p=f&viewport=585%2C223%2C0.38&t=O40qwGf1EtViXNpD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=211%3A310',
       gradient: 'from-accent-rose to-primary',
-      image: '/src/assets/mirae.png'
+  image: miraeImg
     },
     {
       title: 'HearMe',
@@ -37,7 +43,7 @@ const Projects = () => {
       tools: ['Figma','React Native', 'Express',  'Node.js', 'AI Chatbot'],
       link: 'https://www.figma.com/proto/1HDZ4Qmz6HixI0GFJjiCaX/Hearme?page-id=0%3A1&node-id=3-1540&viewport=-1839%2C125%2C0.56&t=Zst2ezT7kwg3bGbt-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A4',
       gradient: 'from-accent-lavender to-primary',
-      image: '/src/assets/hearme.png'
+  image: hearmeImg
     },
     {
       title: 'Mobiz',
@@ -47,7 +53,7 @@ const Projects = () => {
       tools: ['figma'],
       link: 'https://www.figma.com/proto/gDTbzoTbt2jd3TC95JLQUC/Mobiz?page-id=0%3A1&node-id=2-543&p=f&viewport=233%2C113%2C0.14&t=APR9zgcLOqfEnUwK-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2%3A543',
       gradient: 'from-accent-magenta to-primary-end',
-      image: '/src/assets/mobiz.png'
+  image: mobizImg
     },
     {
       title: 'MedApollo (Pharma App)',
@@ -57,7 +63,7 @@ const Projects = () => {
       tools: ['Flutter', 'PostgreSQL', 'Geolocation API', 'Firebase', 'REST APIs'],
       link: 'https://github.com/ghozlenear/MedApollo',
       gradient: 'from-primary to-accent-lavender',
-      image: '/src/assets/medapollo.png'
+  image: medapolloImg
     },
     {
       title: 'Radiology Report Classifier',
@@ -67,7 +73,7 @@ const Projects = () => {
       tools: ['figma'],
       link: 'https://www.figma.com/proto/rq7bYgoCsBqke8gDoiX733/project?page-id=132%3A17&node-id=136-2022&p=f&viewport=147%2C159%2C0.38&t=oNiZUASQZwmL7dYK-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=143%3A4487',
       gradient: 'from-primary to-accent-lavender',
-      image: '/src/assets/radio.png'
+  image: radioImg
     },
   ];
 
