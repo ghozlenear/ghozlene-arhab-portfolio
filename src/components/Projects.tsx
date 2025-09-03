@@ -41,7 +41,7 @@ const Projects = () => {
     },
     {
       title: 'Mobiz',
-      year: '2024',
+      year: '202',
       category: 'web UI Design',
       description: 'Intuitive POS and inventory assistant that centralizes sales, customer accounts and stock generate PDF reports, track credits, and get real‑time restock alerts.',
       tools: ['figma'],

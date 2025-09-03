@@ -207,6 +207,11 @@
   .project-overlay {
     @apply absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 transition-all duration-300 rounded-2xl flex items-end p-6;
   }
+
+  
+  .project-overlay {
+    pointer-events: none;
+  }
 }
 
 @layer utilities {
