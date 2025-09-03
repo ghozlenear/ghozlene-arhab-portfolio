@@ -15,7 +15,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Create mailto link with form data
     const subject = encodeURIComponent(`Message from ${formData.name}`);
     const body = encodeURIComponent(
       `Hi Ghozlene,\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`
@@ -34,7 +33,7 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       icon: FaLinkedin,
-      url: 'https://linkedin.com/in/ghozlene-arhab',
+      url: 'https://www.linkedin.com/in/ghozlene-arhab-164990281/',
       color: 'hover:text-blue-400'
     },
     {
@@ -46,34 +45,28 @@ const Contact = () => {
     {
       name: 'Behance',
       icon: FaBehance,
-      url: 'https://behance.net/ghozlene',
+      url: 'https://www.behance.net/ghozlenearhab',
       color: 'hover:text-blue-500'
     },
-    {
-      name: 'Twitter',
-      icon: FaTwitter,
-      url: 'https://twitter.com/ghozlene',
-      color: 'hover:text-blue-300'
-    }
   ];
 
   const contactInfo = [
     {
       icon: HiMail,
       label: 'Email',
-      value: 'ghozlene.arhab@example.com',
+      value: 'ghozlenearhab@gmail.com',
       link: 'mailto:ghozlene.arhab@example.com'
     },
     {
       icon: HiPhone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+231 556 727 383',
+      link: 'tel:+231556272383'
     },
     {
       icon: HiLocationMarker,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Annaba, Algeria',
       link: null
     }
   ];
@@ -96,7 +89,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}

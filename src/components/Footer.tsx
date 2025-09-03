@@ -9,7 +9,7 @@ const Footer = () => {
     {
       name: 'LinkedIn',
       icon: FaLinkedin,
-      url: 'https://linkedin.com/in/ghozlene-arhab'
+      url: 'https://www.linkedin.com/in/ghozlene-arhab-164990281/'
     },
     {
       name: 'GitHub',
@@ -19,13 +19,8 @@ const Footer = () => {
     {
       name: 'Behance',
       icon: FaBehance,
-      url: 'https://behance.net/ghozlene'
+      url: 'https://www.behance.net/ghozlenearhab'
     },
-    {
-      name: 'Twitter',
-      icon: FaTwitter,
-      url: 'https://twitter.com/ghozlene'
-    }
   ];
 
   const quickLinks = [
@@ -42,14 +37,12 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-card/50 backdrop-blur-md border-t border-border/30 mt-20">
-      {/* Floral Watermark */}
       <div className="absolute top-0 right-0 opacity-5 pointer-events-none">
         <img src={floralDecoration} alt="" className="w-64 h-48" />
       </div>
 
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Brand & Description */}
           <div className="space-y-4">
             <motion.h3 
               className="text-2xl font-bold gradient-text"
@@ -58,7 +51,7 @@ const Footer = () => {
               Ghozlene Arhab
             </motion.h3>
             <p className="text-muted-foreground leading-relaxed">
-              UI/UX Designer & AI Enthusiast passionate about creating beautiful, 
+              UI/UX Designer & AI Engineer passionate about creating beautiful, 
               intelligent digital experiences that make a difference.
             </p>
             <div className="flex gap-4">
@@ -82,7 +75,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-accent-lavender">Quick Links</h4>
             <ul className="space-y-2">
@@ -98,8 +90,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
-          {/* Contact */}
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-accent-lavender">Let's Connect</h4>
             <div className="space-y-2 text-muted-foreground">
@@ -108,19 +98,16 @@ const Footer = () => {
                   href="mailto:ghozlene.arhab@example.com"
                   className="hover:text-primary transition-colors duration-300"
                 >
-                  ghozlene.arhab@example.com
+                  ghozlenearhab@gmail.com
                 </a>
               </p>
-              <p>San Francisco, CA</p>
-              <p>Available for freelance projects</p>
+              <p>Annaba,Algeria</p>
+              <p>Available for Work</p>
             </div>
           </div>
         </div>
-
-        {/* Divider */}
         <div className="my-8 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-        {/* Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p className="flex items-center gap-1">
             © {currentYear} Ghozlene Arhab. Made with 

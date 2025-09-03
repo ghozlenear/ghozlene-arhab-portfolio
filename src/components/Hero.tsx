@@ -11,16 +11,13 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       
-      {/* Animated Aura Background */}
       <div className="absolute inset-0 aura-background" />
-      
-      {/* Floating Floral Decorations */}
+    
       <motion.div
         animate={{ y: [-20, 20, -20] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -59,7 +56,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            UI/UX Designer & AI Enthusiast
+            UI/UX Designer & AI Engineer
           </motion.p>
           
           <motion.p 
@@ -74,20 +71,19 @@ const Hero = () => {
           
           <motion.button
             onClick={handleScrollToProjects}
-            className="btn-primary group"
+            className="btn-primary group px-10 py-4 rounded-full text-lg font-medium min-w-[220px] flex items-center justify-center mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            View My Work
-            <HiArrowDown className="ml-2 group-hover:translate-y-1 transition-transform duration-300" />
+            <span>View My Work</span>
+            <HiArrowDown className="ml-3 group-hover:translate-y-1 transition-transform duration-300" />
           </motion.button>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
