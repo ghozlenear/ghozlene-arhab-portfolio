@@ -29,7 +29,7 @@ const Experience = () => {
     {
       type: 'education',
       title: 'Bachelor\'s in Computer Science',
-      organization: 'National Institute of Technology',
+      organization: 'University of Technology - Annaba',
       period: '2020 - 2023',
       description: 'Foundation in software development, algorithms, and data structures with emphasis on mobile application development and database management.',
       icon: HiAcademicCap,
