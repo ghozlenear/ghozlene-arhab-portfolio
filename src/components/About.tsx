@@ -56,7 +56,7 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg text-foreground leading-relaxed">
-              I'm a passionate UI/UX Designer and AI Enthusiast with a unique blend of creative design skills 
+              I'm a passionate UI/UX Designer and AI Engineer with a unique blend of creative design skills 
               and technical expertise. My journey spans from crafting intuitive user interfaces to developing 
               intelligent systems using machine learning.
             </p>

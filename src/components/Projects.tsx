@@ -10,49 +10,40 @@ const Projects = () => {
 
   const projects = [
     {
-      title: 'Movie Recommendations System',
-      year: '2024',
-      category: 'Machine Learning',
-      description: 'Intelligent movie recommendation system using K-NN and neural networks for personalized content suggestions.',
-      tools: ['Python', 'K-NN', 'Neural Networks', 'scikit-learn', 'TensorFlow', 'pandas', 'NumPy'],
-      link: 'https://github.com/ghozlenear/movie-recommendations',
+      title: 'Coride',
+      year: '2025',
+      category: 'UI Design',
+      description: 'Ridesharing service app with user-friendly interface, real-time tracking, and seamless booking experience.',
+      tools: ['figma','pixabay'],
+      link: 'https://www.figma.com/proto/gWdZlJkECCmWv4K8g2vtvm/coride-service?page-id=0%3A1&node-id=1-752&viewport=147%2C94%2C0.69&t=pjOoL4EqBeogsJFv-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A332',
       gradient: 'from-primary to-accent-rose'
     },
-    {
-      title: 'Object Detection',
-      year: '2024-2025',
-      category: 'Computer Vision',
-      description: 'Advanced object detection system using YOLOv4 and deep learning architectures for real-time recognition.',
-      tools: ['Python', 'YOLOv4', 'ResNet50', 'VGG16', 'OpenCV', 'TensorFlow', 'CNNs'],
-      link: 'https://github.com/ghozlenear/Object-Detection',
-      gradient: 'from-accent-magenta to-primary-end'
-    },
-    {
-      title: 'HearMe',
-      year: '2024',
-      category: 'Mental Health',
-      description: 'Mental health app with AI chatbot support, emergency calling features, and mood activity tracking.',
-      tools: ['React Native', 'Express', 'Figma', 'Node.js', 'AI Chatbot'],
-      link: 'https://github.com/ghozlenear/hearme',
-      gradient: 'from-accent-lavender to-primary'
-    },
-    {
-      title: 'Facial Expression Recognition',
-      year: '2024',
-      category: 'Deep Learning',
-      description: 'Real-time facial expression recognition using transfer learning with MobileNetV2 architecture.',
-      tools: ['Python', 'MobileNetV2', 'ImageDataGenerator', 'TensorFlow', 'OpenCV'],
-      link: 'https://github.com/ghozlenear/facial-expression-recognition',
-      gradient: 'from-primary-end to-accent-magenta'
-    },
-    {
+     {
       title: 'Mirae',
-      year: '2024',
+      year: '2025',
       category: 'E-commerce',
       description: 'Beauty e-commerce mobile application with modern UI/UX and seamless shopping experience.',
       tools: ['Figma', 'React Native', 'Node.js', 'REST API'],
-      link: 'https://github.com/ghozlenear/mirae',
+      link: 'https://www.figma.com/proto/6LAmTkN42JeLxWmj94Qs9v/Mirae?page-id=0%3A1&node-id=211-310&p=f&viewport=585%2C223%2C0.38&t=O40qwGf1EtViXNpD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=211%3A310',
       gradient: 'from-accent-rose to-primary'
+    },
+    {
+      title: 'HearMe',
+      year: '2025',
+      category: 'UI Design, Mobile App',
+      description: 'Mental health app with AI chatbot support, emergency calling features, and mood activity tracking.',
+      tools: ['Figma','React Native', 'Express',  'Node.js', 'AI Chatbot'],
+      link: 'https://www.figma.com/proto/1HDZ4Qmz6HixI0GFJjiCaX/Hearme?page-id=0%3A1&node-id=3-1540&viewport=-1839%2C125%2C0.56&t=Zst2ezT7kwg3bGbt-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A4',
+      gradient: 'from-accent-lavender to-primary'
+    },
+     {
+      title: 'Mobiz',
+      year: '2025',
+      category: 'UI Design',
+      description: 'Advanced object detection system using YOLOv4 and deep learning architectures for real-time recognition.',
+      tools: ['Python', 'YOLOv4', 'ResNet50', 'VGG16', 'OpenCV', 'TensorFlow', 'CNNs'],
+      link: 'https://www.figma.com/proto/gDTbzoTbt2jd3TC95JLQUC/Mobiz?page-id=0%3A1&node-id=2-543&p=f&viewport=233%2C113%2C0.14&t=APR9zgcLOqfEnUwK-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2%3A543',
+      gradient: 'from-accent-magenta to-primary-end'
     },
     {
       title: 'MedApollo (Pharma App)',
@@ -93,7 +84,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A collection of innovative projects spanning AI, machine learning, and digital experiences
+            A collection of innovative projects of digital experiences
           </p>
         </motion.div>
 
@@ -106,7 +97,6 @@ const Projects = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               className="project-card group relative overflow-hidden"
             >
-              {/* Project Thumbnail/Gradient Background */}
               <div className={`h-48 bg-gradient-to-br ${project.gradient} rounded-xl mb-6 relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/20" />
                 <div className="absolute top-4 left-4">
@@ -119,7 +109,6 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Project Content */}
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-accent-lavender group-hover:text-primary transition-colors duration-300">
                   {project.title}
@@ -129,7 +118,6 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Tools/Technologies */}
                 <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
                     <span
@@ -142,7 +130,6 @@ const Projects = () => {
                   ))}
                 </div>
 
-                {/* Project Link */}
                 <motion.a
                   href={project.link}
                   target="_blank"
@@ -155,8 +142,6 @@ const Projects = () => {
                   View Project
                 </motion.a>
               </div>
-
-              {/* Hover Overlay */}
               <div className="project-overlay">
                 <div className="text-white">
                   <h4 className="text-lg font-semibold mb-2">{project.title}</h4>
