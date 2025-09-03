@@ -11,7 +11,7 @@ const Experience = () => {
     {
       type: 'education',
       title: 'Master\'s in Artificial Intelligence',
-      organization: 'University of Technology',
+      organization: 'University of Technology - Annaba',
       period: '2023 - 2025',
       description: 'Specialized in machine learning, deep learning, and computer vision with focus on practical applications in healthcare and recommendation systems.',
       icon: HiAcademicCap,
@@ -19,9 +19,9 @@ const Experience = () => {
     },
     {
       type: 'work',
-      title: 'UI/UX Design Intern',
-      organization: 'Tech Innovation Lab',
-      period: '2024',
+      title: 'UI/UX Design ',
+      organization: 'PFreelance Projects',
+      period: '2023 - Present',
       description: 'Designed user interfaces for mobile applications, conducted user research, and created comprehensive design systems for multiple projects.',
       icon: HiBriefcase,
       color: 'from-accent-magenta to-primary-end'
@@ -55,7 +55,6 @@ const Experience = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline Line */}
           <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-accent-magenta to-primary-end opacity-30" />
 
           <div className="space-y-12">
@@ -73,14 +72,13 @@ const Experience = () => {
                     isEven ? 'md:flex-row' : 'md:flex-row-reverse'
                   } flex-col md:flex-row`}
                 >
-                  {/* Timeline Icon */}
+
                   <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 -translate-y-0 z-10">
                     <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${exp.color} p-4 border-4 border-background shadow-lg`}>
                       <Icon className="w-full h-full text-white" />
                     </div>
                   </div>
 
-                  {/* Content Card */}
                   <div className={`w-full md:w-5/12 ${isEven ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'} ml-20 md:ml-0`}>
                     <div className="card-aura p-6 rounded-2xl">
                       <div className="flex items-center justify-between mb-3">
