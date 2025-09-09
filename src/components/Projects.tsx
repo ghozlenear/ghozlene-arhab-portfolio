@@ -15,16 +15,6 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const projects = [
-    {
-      title: 'Coride',
-      year: '2025',
-      category: 'UI Design',
-      description: 'Ridesharing service app with user-friendly interface, real-time tracking, and seamless booking experience.',
-      tools: ['figma','pixabay'],
-      link: 'https://www.figma.com/proto/gWdZlJkECCmWv4K8g2vtvm/coride-service?page-id=0%3A1&node-id=1-752&viewport=147%2C94%2C0.69&t=pjOoL4EqBeogsJFv-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A332',
-      gradient: 'from-primary to-accent-rose',
-  image: corideImg
-    },
      {
       title: 'Mirae',
       year: '2025',
@@ -45,16 +35,7 @@ const Projects = () => {
       gradient: 'from-accent-lavender to-primary',
   image: hearmeImg
     },
-    {
-      title: 'Mobiz',
-      year: '202',
-      category: 'web UI Design',
-      description: 'Intuitive POS and inventory assistant that centralizes sales, customer accounts and stock generate PDF reports, track credits, and get real‑time restock alerts.',
-      tools: ['figma'],
-      link: 'https://www.figma.com/proto/gDTbzoTbt2jd3TC95JLQUC/Mobiz?page-id=0%3A1&node-id=2-543&p=f&viewport=233%2C113%2C0.14&t=APR9zgcLOqfEnUwK-1&scaling=scale-down-width&content-scaling=fixed&starting-point-node-id=2%3A543',
-      gradient: 'from-accent-magenta to-primary-end',
-  image: mobizImg
-    },
+   
     {
       title: 'MedApollo (Pharma App)',
       year: '2023',
