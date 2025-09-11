@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { HiExternalLink, HiCode } from 'react-icons/hi';
+import { SiFigma } from 'react-icons/si';
+import { FaGithub } from 'react-icons/fa';
 import { SiPython, SiTensorflow, SiFlutter, SiPostgresql } from 'react-icons/si';
 import corideImg from '../assets/coride.png';
 import miraeImg from '../assets/mirae.png';
@@ -9,54 +11,120 @@ import hearmeImg from '../assets/hearme.png';
 import mobizImg from '../assets/mobiz.png';
 import medapolloImg from '../assets/medapollo.png';
 import radioImg from '../assets/radio.png';
+import aiObjectImg from '../assets/ai-object-detection.svg';
+import aiBreastImg from '../assets/ai-breast-cancer.svg';
+import aiMovieImg from '../assets/ai-movie-recommendation.svg';
+import aiFacialImg from '../assets/ai-facial-expression.svg';
 
 const Projects = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const projects = [
-     {
+    {
       title: 'Mirae',
       year: '2025',
-      category: 'App UI Design',
-      description: 'Beauty e-commerce mobile application with modern UI/UX and seamless shopping experience.',
+      category: 'E-commerce',
+      description:
+        'Beauty e-commerce mobile application with modern UI/UX and seamless shopping experience.',
       tools: ['Figma', 'React Native', 'Node.js', 'REST API'],
       link: 'https://www.figma.com/proto/6LAmTkN42JeLxWmj94Qs9v/Mirae?page-id=0%3A1&node-id=211-310&p=f&viewport=585%2C223%2C0.38&t=O40qwGf1EtViXNpD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=211%3A310',
       gradient: 'from-accent-rose to-primary',
-  image: miraeImg
+      image: miraeImg,
+      tags: ['uiux'],
     },
     {
       title: 'HearMe',
       year: '2025',
       category: 'UI Design, Mobile App',
-      description: 'Mental health app with AI chatbot support, emergency calling features, and mood activity tracking.',
-      tools: ['Figma','React Native', 'Express',  'Node.js', 'AI Chatbot'],
+      description:
+        'Mental health app with AI chatbot support, emergency calling features, and mood activity tracking.',
+      tools: ['Figma', 'React Native', 'Express', 'Node.js', 'AI Chatbot'],
       link: 'https://www.figma.com/proto/1HDZ4Qmz6HixI0GFJjiCaX/Hearme?page-id=0%3A1&node-id=3-1540&viewport=-1839%2C125%2C0.56&t=Zst2ezT7kwg3bGbt-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A4',
+      github: 'https://github.com/ghozlenear/HearMe-App',
       gradient: 'from-accent-lavender to-primary',
-  image: hearmeImg
+      image: hearmeImg,
+  tags: ['uiux', 'ai']
     },
-   
+    {
+      title: 'Real-Time Object Detection',
+      year: '2025',
+      category: 'AI',
+      description:
+        'Implemented neural networks for object classification and localization in various environments.',
+      tools: ['ResNet50', 'YOLOv4','VGG16' ],
+  github: 'https://github.com/ghozlenear/Object-Detection',
+  image: aiObjectImg,
+      gradient: 'from-accent-lavender to-primary',
+  tags: [ 'ai']
+    },
+    {
+      title: 'Breast Cancer Prediction',
+      year: '2024',
+      category: 'AI',
+      description:
+        'Applied supervised classification models to assist in early diagnosis from medical data.',
+      tools: ['KNN', 'SVM', 'KMeans','Naive Bayes','Decision Tree'],
+  github: 'https://github.com/ghozlenear/breastcancer',
+  image: aiBreastImg,
+      gradient: 'from-accent-lavender to-primary',
+  tags: [ 'ai']
+    },
+    {
+      title: 'Movie Recommendation System',
+      year: '2024',
+      category: 'AI',
+      description:
+        'Developed a hybrid recommendation engine combining collaborative and content-based filtering.',
+      tools: ['KNN', 'ANN'],
+  github: 'https://github.com/ghozlenear/movie-recommendations',
+  image: aiMovieImg,
+      gradient: 'from-accent-lavender to-primary',
+  tags: [ 'ai']
+    },
+    {
+      title: 'Facial Expression Recognition',
+      year: '2024',
+      category: 'AI',
+      description:
+        'Created an image analysis model for emotion detection.',
+      tools: ['MobileNetV2'],
+    github: 'https://github.com/ghozlenear/facial-expression-recognition',
+    gradient: 'from-accent-lavender to-primary',
+  image: aiFacialImg,
+  tags: [ 'ai']
+    },
     {
       title: 'MedApollo (Pharma App)',
       year: '2023',
       category: 'Mobile Development',
-      description: 'Comprehensive pharmaceutical mobile application with geolocation features and real-time data management.',
+      description:
+        'Comprehensive pharmaceutical mobile application with geolocation features and real-time data management.',
       tools: ['Flutter', 'PostgreSQL', 'Geolocation API', 'Firebase', 'REST APIs'],
-      link: 'https://github.com/ghozlenear/MedApollo',
+      github: 'https://github.com/ghozlenear/MedApollo',
       gradient: 'from-primary to-accent-lavender',
-  image: medapolloImg
+      image: medapolloImg,
+      tags: ['mobile'],
     },
     {
       title: 'Radiology Report Classifier',
       year: '2023',
       category: 'Desktop UI Design',
-      description: 'A user interface designed to streamline collaboration between radiologists and doctors. The goal is to simplify patient management, radiography uploads, and communication between medical professionals.',
+      description:
+        'A user interface designed to streamline collaboration between radiologists and doctors. The goal is to simplify patient management, radiography uploads, and communication between medical professionals.',
       tools: ['figma'],
       link: 'https://www.figma.com/proto/rq7bYgoCsBqke8gDoiX733/project?page-id=132%3A17&node-id=136-2022&p=f&viewport=147%2C159%2C0.38&t=oNiZUASQZwmL7dYK-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=143%3A4487',
       gradient: 'from-primary to-accent-lavender',
-  image: radioImg
+      image: radioImg,
+      tags: ['uiux'],
     },
   ];
+
+  const [filter, setFilter] = useState<'all' | 'ai' | 'uiux'>('all');
+  const filteredProjects = projects.filter((p) => {
+    if (filter === 'all') return true;
+    return p.tags?.includes(filter);
+  });
 
   const getToolIcon = (tool: string) => {
     switch (tool.toLowerCase()) {
@@ -80,23 +148,39 @@ const Projects = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-            Featured Projects
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A collection of innovative projects of digital experiences
+            A collection of innovative projects and experiments.
           </p>
+
+          <div className="flex justify-center gap-3 mt-6">
+            <button
+              onClick={() => setFilter('all')}
+              className={`px-4 py-2 rounded-md font-medium transition ${filter === 'all' ? 'bg-primary text-white' : 'bg-white/5 text-accent-lavender'}`}>
+              All
+            </button>
+            <button
+              onClick={() => setFilter('ai')}
+              className={`px-4 py-2 rounded-md font-medium transition ${filter === 'ai' ? 'bg-primary text-white' : 'bg-white/5 text-accent-lavender'}`}>
+              AI Projects
+            </button>
+            <button
+              onClick={() => setFilter('uiux')}
+              className={`px-4 py-2 rounded-md font-medium transition ${filter === 'uiux' ? 'bg-primary text-white' : 'bg-white/5 text-accent-lavender'}`}>
+              UI/UX Design
+            </button>
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {filteredProjects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.06 }}
               className="project-card group relative overflow-hidden"
             >
               <div className={`h-48 bg-gradient-to-br ${project.gradient} rounded-xl mb-6 relative overflow-hidden`}>
@@ -111,44 +195,65 @@ const Projects = () => {
                     {project.category}
                   </span>
                 </div>
-                <div className="absolute bottom-4 right-4 text-white/60 font-medium">
-                  {project.year}
-                </div>
+                <div className="absolute bottom-4 right-4 text-white/60 font-medium">{project.year}</div>
               </div>
 
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-accent-lavender group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
+
+                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2">
                   {project.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 text-accent-lavender text-xs rounded-md border border-primary/20"
-                    >
+                    <span key={tool} className="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 text-accent-lavender text-xs rounded-md border border-primary/20">
                       {getToolIcon(tool)}
                       {tool}
                     </span>
                   ))}
                 </div>
 
-                <motion.a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center gap-2 text-primary hover:text-accent-rose transition-colors duration-300 font-medium"
-                >
-                  <HiExternalLink className="w-4 h-4" />
-                  View Project
-                </motion.a>
+                <div className="flex items-center">
+                  {project.link && (
+                    <motion.a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center gap-2 text-primary hover:text-accent-rose transition-colors duration-300 font-medium"
+                    >
+                      {project.link?.includes('figma.com') ? (
+                        <>
+                          <SiFigma className="w-4 h-4" />
+                          <span>View Prototype</span>
+                        </>
+                      ) : (
+                        <>
+                          <HiExternalLink className="w-4 h-4" />
+                          <span>View Project</span>
+                        </>
+                      )}
+                    </motion.a>
+                  )}
+
+                  {project.github && (
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-flex items-center gap-2 ml-4 text-primary hover:text-accent-rose transition-colors duration-300 font-medium"
+                    >
+                      <FaGithub className="w-4 h-4" />
+                      <span>View on GitHub</span>
+                    </motion.a>
+                  )}
+                </div>
               </div>
+
               <div className="project-overlay">
                 <div className="text-white">
                   <h4 className="text-lg font-semibold mb-2">{project.title}</h4>
