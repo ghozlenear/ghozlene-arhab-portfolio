@@ -32,6 +32,7 @@ const Projects = () => {
       link: 'https://github.com/ghozlenear/kareira',
       gradient: 'from-accent-rose to-primary',
       image: karieraImg,
+      imageFit: 'contain',
       tags: ['frontend'],
     },
     {
@@ -179,7 +180,11 @@ const Projects = () => {
             >
               <div className={`h-48 bg-gradient-to-br ${project.gradient} rounded-xl mb-6 relative overflow-hidden`}>
                 {project.image ? (
-                  <img src={project.image} alt={project.title} className="absolute inset-0 w-full h-full object-cover rounded-xl" />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className={`absolute inset-0 w-full h-full rounded-xl ${project.imageFit === 'contain' ? 'object-contain p-4 bg-white/5' : 'object-cover'}`}
+                  />
                 ) : (
                   <div className="absolute inset-0 bg-black/20" />
                 )}
