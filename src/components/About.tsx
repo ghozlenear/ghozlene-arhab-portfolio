@@ -43,7 +43,7 @@ const About = () => {
             <div className="relative overflow-hidden rounded-2xl card-aura p-2">
               <img
                 src={profileImage}
-                alt="Ghozlene Arhab - UI/UX Designer"
+                alt="Ghozlene Arhab - AI Engineer & Frontend Development"
                 className="w-full h-auto rounded-2xl object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
@@ -56,7 +56,7 @@ const About = () => {
             className="space-y-6"
           >
             <p className="text-lg text-foreground leading-relaxed">
-              I'm a passionate UI/UX Designer and AI Engineer with a unique blend of creative design skills 
+              I'm a passionate UI/ UX Designer,Frontend devlopper and AI Engineer with a unique blend of creative design skills 
               and technical expertise. My journey spans from crafting intuitive user interfaces to developing 
               intelligent systems using machine learning.
             </p>

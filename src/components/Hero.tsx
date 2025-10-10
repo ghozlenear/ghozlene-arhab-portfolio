@@ -55,7 +55,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            UI/UX Designer & AI Engineer
+            AI Engineer & Frontend Development
           </motion.p>
           
           <motion.p 
