@@ -8,6 +8,15 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const experiences = [
+     {
+      type: 'Remote Internship',
+      title: 'Frontend Developer Intern',
+      organization: 'REVO LCC - USA',
+      period: 'sep 2025 - nov 2025',
+      description: 'Contributed to the development of a web application using React and Tailwind CSS, collaborating with a remote team to implement responsive designs and enhance user experience.',
+      icon: HiBriefcase,
+      color: 'from-primary to-accent-rose'
+    },
     {
       type: 'education',
       title: 'Master\'s in Artificial Intelligence',

@@ -94,30 +94,6 @@ const Projects = () => {
   image: aiFacialImg,
   tags: [ 'ai']
     },
-    {
-      title: 'MedApollo (Pharma App)',
-      year: '2023',
-      category: 'Mobile Development',
-      description:
-        'Comprehensive pharmaceutical mobile application with geolocation features and real-time data management.',
-      tools: ['Flutter', 'PostgreSQL', 'Geolocation API', 'Firebase', 'REST APIs'],
-      github: 'https://github.com/ghozlenear/MedApollo',
-      gradient: 'from-primary to-accent-lavender',
-      image: medapolloImg,
-      tags: ['mobile'],
-    },
-    {
-      title: 'Radiology Report Classifier',
-      year: '2023',
-      category: 'Desktop UI Design',
-      description:
-        'A user interface designed to streamline collaboration between radiologists and doctors. The goal is to simplify patient management, radiography uploads, and communication between medical professionals.',
-      tools: ['figma'],
-      link: 'https://www.figma.com/proto/rq7bYgoCsBqke8gDoiX733/project?page-id=132%3A17&node-id=136-2022&p=f&viewport=147%2C159%2C0.38&t=oNiZUASQZwmL7dYK-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=143%3A4487',
-      gradient: 'from-primary to-accent-lavender',
-      image: radioImg,
-      tags: ['uiux'],
-    },
   ];
 
   const [filter, setFilter] = useState<'all' | 'ai' | 'uiux'>('all');
