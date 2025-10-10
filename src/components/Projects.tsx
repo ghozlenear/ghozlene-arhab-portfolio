@@ -32,7 +32,7 @@ const Projects = () => {
       link: 'https://github.com/ghozlenear/kareira',
       gradient: 'from-accent-rose to-primary',
       image: karieraImg,
-      tags: ['Frontend Development'],
+      tags: ['frontend'],
     },
     {
       title: 'Mirae',
@@ -57,7 +57,7 @@ const Projects = () => {
       github: 'https://github.com/ghozlenear/HearMe-App',
       gradient: 'from-accent-lavender to-primary',
       image: hearmeImg,
-  tags: ['uiux','Frontend Development', 'ai']
+  tags: ['uiux','frontend', 'ai']
     },
     {
       title: 'Real-Time Object Detection',
@@ -109,7 +109,7 @@ const Projects = () => {
     },
   ];
 
-  const [filter, setFilter] = useState<'all' | 'ai' | 'uiux'>('all');
+  const [filter, setFilter] = useState<'all' | 'ai' | 'uiux' | 'frontend'>('all');
   const filteredProjects = projects.filter((p) => {
     if (filter === 'all') return true;
     return p.tags?.includes(filter);
@@ -149,6 +149,11 @@ const Projects = () => {
               onClick={() => setFilter('all')}
               className={`px-4 py-2 rounded-md font-medium transition ${filter === 'all' ? 'bg-primary text-white' : 'bg-white/5 text-accent-lavender'}`}>
               All
+            </button>
+            <button
+              onClick={() => setFilter('frontend')}
+              className={`px-4 py-2 rounded-md font-medium transition ${filter === 'frontend' ? 'bg-primary text-white' : 'bg-white/5 text-accent-lavender'}`}>
+              Frontend Development
             </button>
             <button
               onClick={() => setFilter('ai')}
