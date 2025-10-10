@@ -11,6 +11,7 @@ import hearmeImg from '../assets/hearme.png';
 import mobizImg from '../assets/mobiz.png';
 import medapolloImg from '../assets/medapollo.png';
 import radioImg from '../assets/radio.png';
+import karieraImg from '../assets/kariera.png';
 import aiObjectImg from '../assets/ai-object-detection.svg';
 import aiBreastImg from '../assets/ai-breast-cancer.svg';
 import aiMovieImg from '../assets/ai-movie-recommendation.svg';
@@ -21,6 +22,18 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const projects = [
+    {
+      title: 'Kariera',
+      year: '2025',
+      category: 'AI, Web App',
+      description:
+        'AI-powered career guidance platform offering personalized job recommendations,resume builder and skill assessments.',
+      tools: ['React ','Tailwind CSS', 'Node.js'],
+      link: 'https://github.com/ghozlenear/kareira',
+      gradient: 'from-accent-rose to-primary',
+      image: karieraImg,
+      tags: ['Frontend Development'],
+    },
     {
       title: 'Mirae',
       year: '2025',
@@ -44,7 +57,7 @@ const Projects = () => {
       github: 'https://github.com/ghozlenear/HearMe-App',
       gradient: 'from-accent-lavender to-primary',
       image: hearmeImg,
-  tags: ['uiux', 'ai']
+  tags: ['uiux','Frontend Development', 'ai']
     },
     {
       title: 'Real-Time Object Detection',
