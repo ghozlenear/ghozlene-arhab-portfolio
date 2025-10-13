@@ -43,9 +43,10 @@ const Projects = () => {
         'Beauty e-commerce mobile application with modern UI/UX and seamless shopping experience.',
       tools: ['Figma', 'React Native', 'Node.js', 'REST API'],
       link: 'https://www.figma.com/proto/6LAmTkN42JeLxWmj94Qs9v/Mirae?page-id=0%3A1&node-id=211-310&p=f&viewport=585%2C223%2C0.38&t=O40qwGf1EtViXNpD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=211%3A310',
+      github: 'https://github.com/ghozlenear/ghozlene-arhab-portfolio',
       gradient: 'from-accent-rose to-primary',
       image: miraeImg,
-      tags: ['uiux'],
+      tags: ['uiux', 'frontend'],
     },
     {
       title: 'HearMe',
