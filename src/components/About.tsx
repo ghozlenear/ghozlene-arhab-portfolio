@@ -1,90 +1,32 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import profileImage from '../assets/profile-image.jpg';
-
 const About = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const skills = [
-    'UI/UX Design',
-    'Figma',
-    'User Research',
-    'Design Systems',
-    'React Native',
-    'Python',
-  ];
-
   return (
-    <section id="about" className="py-20 px-6" ref={ref}>
-      <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
-            About Me
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Passionate about creating meaningful digital experiences that bridge technology and human needs
+    <section id="about" className="relative py-16 md:py-24 px-6">
+      <div className="container mx-auto max-w-4xl">
+        <h1 className="text-4xl md:text-5xl tracking-wide font-['Italiana',serif] text-black mb-6 text-center">
+          WHO’s Ghozlene?
+        </h1>
+
+        <div className="space-y-5">
+          <p className="font-['Space_Mono',monospace] text-base md:text-lg leading-relaxed text-black/80">
+            I'm a passionate UI/ UX Designer, Frontend developer and AI Engineer with a unique blend of
+            creative design skills and technical expertise. My journey spans from crafting intuitive user
+            interfaces to developing intelligent systems using machine learning.
           </p>
-        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            <div className="relative overflow-hidden rounded-2xl card-aura p-2">
-              <img
-                src={profileImage}
-                alt="Ghozlene Arhab - AI Engineer & Frontend Development"
-                className="w-full h-auto rounded-2xl object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="space-y-6"
-          >
-            <p className="text-lg text-foreground leading-relaxed">
-              I'm a passionate UI/ UX Designer,Frontend devlopper and AI Engineer with a unique blend of creative design skills 
-              and technical expertise. My journey spans from crafting intuitive user interfaces to developing 
-              intelligent systems using machine learning.
-            </p>
-            
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              With experience in both design and development, I bring a holistic approach to digital product 
-              creation. I believe in the power of design to solve complex problems and create meaningful 
-              connections between users and technology.
-            </p>
+          <p className="font-['Space_Mono',monospace] text-base md:text-lg leading-relaxed text-black/70">
+            With experience in both design and development, I bring a holistic approach to digital product
+            creation. I believe in the power of design to solve complex problems and create meaningful
+            connections between users and technology.
+          </p>
 
-            {/* Skills */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-accent-lavender">Core Skills</h3>
-              <div className="flex flex-wrap gap-3">
-                {skills.map((skill, index) => (
-                  <motion.span
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                    className="skill-badge"
-                  >
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+          <div className="pt-2">
+            <h3 className="font-['Italiana',serif] text-2xl md:text-3xl text-black">Core Skills</h3>
+            <ul className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-y-3 gap-x-6 font-['Space_Mono',monospace] text-black/80 text-sm">
+              <li>React / React Native</li>
+              <li>Python</li>
+              <li>UI / UX Design</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
