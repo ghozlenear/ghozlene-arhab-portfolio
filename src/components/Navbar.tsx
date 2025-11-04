@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { HiMenu, HiX } from 'react-icons/hi';
 import shape1 from '../assets/shape1.png';
@@ -7,6 +7,8 @@ import yellowArrow from '../assets/yellow-arrow.png';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('#home');
+  const [hidden, setHidden] = useState(false);
+  const lastYRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,22 +23,36 @@ const Navbar = () => {
         return false;
       });
       if (current) setActiveSection(current);
+
+      // Hide on scroll down, show on scroll up
+      const y = window.scrollY || 0;
+      const prev = lastYRef.current;
+      const delta = y - prev;
+      lastYRef.current = y;
+
+      const nearTop = y < 80;
+      if (isOpen || nearTop) {
+        setHidden(false);
+      } else {
+        if (delta > 2) setHidden(true); // scrolling down
+        else if (delta < -2) setHidden(false); // scrolling up
+      }
     };
 
     // Set initial hash
     const hash = window.location.hash || '#home';
     setActiveSection(hash);
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('hashchange', () => {
       setActiveSection(window.location.hash || '#home');
     });
     
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll as any);
       window.removeEventListener('hashchange', () => {});
     };
-  }, []);
+  }, [isOpen]);
 
   const navItems = [
     { name: 'home', href: '#home' },
@@ -59,7 +75,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent pt-6">
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-transparent pt-6 transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}>
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-center relative">
           {/* Centered White Rectangle with Navigation */}
