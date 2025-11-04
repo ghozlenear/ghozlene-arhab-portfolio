@@ -63,43 +63,21 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-center relative">
           {/* Centered White Rectangle with Navigation */}
-          <div className="hidden md:flex items-center space-x-4 md:space-x-6 bg-white px-6 py-3 rounded-full shadow-sm relative z-10">
-            {/* Yellow flower shape - positioned to the left of nav */}
-            <img
-              src={shape1}
-              alt=""
-              className="absolute -left-12 top-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16"
-            />
-
+          <div className="hidden md:flex items-center justify-between bg-white px-8 h-12 w-[600px] rounded-full shadow-sm border border-black shadow-xl relative z-10">
             {navItems.map((item) => {
               const active = isActive(item.href);
               return (
                 <button
                   key={item.name}
                   onClick={() => handleNavClick(item.href)}
-                  className={`relative font-['Space_Mono',monospace] text-sm transition-all duration-300 ${
-                    active
-                      ? 'bg-[#FFE66D]/30 px-4 py-2 rounded-full'
-                      : 'text-black hover:text-[#FF4A3B]'
+                  className={`font-['Space_Mono',monospace] text-sm transition-colors duration-200 ${
+                    active ? 'text-[#FF4A3B]' : 'text-black hover:text-[#FF4A3B]'
                   }`}
                 >
-                  <span
-                    className={`underline decoration-2 ${
-                      active ? 'decoration-[#FF4A3B]' : 'decoration-black'
-                    }`}
-                  >
-                    _{item.name}
-                  </span>
+                  _{item.name}
                 </button>
               );
             })}
-
-            {/* Yellow arrow extending from the right side of nav */}
-            <img
-              src={yellowArrow}
-              alt=""
-              className="absolute -right-20 top-1/2 -translate-y-1/2 w-24 h-auto hidden lg:block"
-            />
           </div>
 
           {/* Mobile Menu Button */}
