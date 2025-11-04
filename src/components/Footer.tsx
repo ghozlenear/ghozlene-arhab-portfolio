@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaBehance, FaTwitter, FaHeart } from 'react-icons/fa';
-import floralDecoration from '../assets/floral-decoration.png';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -38,7 +38,8 @@ const Footer = () => {
   return (
     <footer className="relative bg-card/50 backdrop-blur-md border-t border-border/30 mt-20">
       <div className="absolute top-0 right-0 opacity-5 pointer-events-none">
-        <img src={floralDecoration} alt="" className="w-64 h-48" />
+        
+
       </div>
 
       <div className="container mx-auto px-6 py-12">
