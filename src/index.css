@@ -222,6 +222,15 @@
   .border-glow {
     box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
   }
+
+  /* Hide scrollbars cross-browser */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
 }
 
 /* Keyframe animations */

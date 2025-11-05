@@ -5,266 +5,127 @@ import { HiExternalLink, HiCode } from 'react-icons/hi';
 import { SiFigma } from 'react-icons/si';
 import { FaGithub } from 'react-icons/fa';
 import { SiPython, SiTensorflow, SiFlutter, SiPostgresql } from 'react-icons/si';
-import corideImg from '../assets/coride.png';
 import miraeImg from '../assets/mirae.png';
 import hearmeImg from '../assets/hearme.png';
-import mobizImg from '../assets/mobiz.png';
-import medapolloImg from '../assets/medapollo.png';
-import radioImg from '../assets/radio.png';
 import karieraImg from '../assets/kariera.png';
 import aiObjectImg from '../assets/ai-object-detection.svg';
 import aiBreastImg from '../assets/ai-breast-cancer.svg';
 import aiMovieImg from '../assets/ai-movie-recommendation.svg';
 import aiFacialImg from '../assets/ai-facial-expression.svg';
+import heroBg from '../assets/hero-bg.png';
+import vectorOverlay from '../assets/Vector.png';
 
 const Projects = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-  const projects = [
-    {
-      title: 'Kariera',
-      year: '2025',
-      category: 'AI, Web App',
-      description:
-        'AI-powered career guidance platform offering personalized job recommendations,resume builder and skill assessments.',
-      tools: ['React ','Tailwind CSS', 'Node.js'],
-      link: 'https://github.com/ghozlenear/kareira',
-      gradient: 'from-accent-rose to-primary',
-      image: karieraImg,
-      imageFit: 'contain',
-      tags: ['frontend'],
-    },
-    {
-      title: 'Mirae',
-      year: '2025',
-      category: 'E-commerce',
-      description:
-        'Beauty e-commerce mobile application with modern UI/UX and seamless shopping experience.',
-      tools: ['Figma', 'React Native', 'Node.js', 'REST API'],
-      link: 'https://www.figma.com/proto/6LAmTkN42JeLxWmj94Qs9v/Mirae?page-id=0%3A1&node-id=211-310&p=f&viewport=585%2C223%2C0.38&t=O40qwGf1EtViXNpD-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=211%3A310',
-      github: 'https://github.com/ghozlenear/ghozlene-arhab-portfolio',
-      gradient: 'from-accent-rose to-primary',
-      image: miraeImg,
-      tags: ['uiux', 'frontend'],
-    },
-    {
-      title: 'HearMe',
-      year: '2025',
-      category: 'UI Design, Mobile App',
-      description:
-        'Mental health app with AI chatbot support, emergency calling features, and mood activity tracking.',
-      tools: ['Figma', 'React Native', 'Express', 'Node.js', 'AI Chatbot'],
-      link: 'https://www.figma.com/proto/1HDZ4Qmz6HixI0GFJjiCaX/Hearme?page-id=0%3A1&node-id=3-1540&viewport=-1839%2C125%2C0.56&t=Zst2ezT7kwg3bGbt-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A4',
-      github: 'https://github.com/ghozlenear/HearMe-App',
-      gradient: 'from-accent-lavender to-primary',
-      image: hearmeImg,
-  tags: ['uiux','frontend', 'ai']
-    },
-    {
-      title: 'Real-Time Object Detection',
-      year: '2025',
-      category: 'AI',
-      description:
-        'Implemented neural networks for object classification and localization in various environments.',
-      tools: ['ResNet50', 'YOLOv4','VGG16' ],
-  github: 'https://github.com/ghozlenear/Object-Detection',
-  image: aiObjectImg,
-      gradient: 'from-accent-lavender to-primary',
-  tags: [ 'ai']
-    },
-    {
-      title: 'Breast Cancer Prediction',
-      year: '2024',
-      category: 'AI',
-      description:
-        'Applied supervised classification models to assist in early diagnosis from medical data.',
-      tools: ['KNN', 'SVM', 'KMeans','Naive Bayes','Decision Tree'],
-  github: 'https://github.com/ghozlenear/breastcancer',
-  image: aiBreastImg,
-      gradient: 'from-accent-lavender to-primary',
-  tags: [ 'ai']
-    },
-    {
-      title: 'Movie Recommendation System',
-      year: '2024',
-      category: 'AI',
-      description:
-        'Developed a hybrid recommendation engine combining collaborative and content-based filtering.',
-      tools: ['KNN', 'ANN'],
-  github: 'https://github.com/ghozlenear/movie-recommendations',
-  image: aiMovieImg,
-      gradient: 'from-accent-lavender to-primary',
-  tags: [ 'ai']
-    },
-    {
-      title: 'Facial Expression Recognition',
-      year: '2024',
-      category: 'AI',
-      description:
-        'Created an image analysis model for emotion detection.',
-      tools: ['MobileNetV2'],
-    github: 'https://github.com/ghozlenear/facial-expression-recognition',
-    gradient: 'from-accent-lavender to-primary',
-  image: aiFacialImg,
-  tags: [ 'ai']
-    },
-  ];
-
-  const [filter, setFilter] = useState<'all' | 'ai' | 'uiux' | 'frontend'>('all');
-  const filteredProjects = projects.filter((p) => {
-    if (filter === 'all') return true;
-    return p.tags?.includes(filter);
-  });
-
-  const getToolIcon = (tool: string) => {
-    switch (tool.toLowerCase()) {
-      case 'python':
-        return <SiPython className="w-4 h-4" />;
-      case 'tensorflow':
-        return <SiTensorflow className="w-4 h-4" />;
-      case 'flutter':
-        return <SiFlutter className="w-4 h-4" />;
-      case 'postgresql':
-        return <SiPostgresql className="w-4 h-4" />;
-      default:
-        return <HiCode className="w-4 h-4" />;
-    }
-  };
+  const [active, setActive] = useState<'all' | 'frontend' | 'ai' | 'uiux'>('all');
 
   return (
-    <section id="projects" className="py-20 px-6" ref={ref}>
-      <div className="container mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-8"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Featured Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A collection of innovative projects and experiments.
-          </p>
+    <section id="projects" className="-mt-6 md:-mt-8 py-0">
+  <div
+    className="relative z-0 w-full h-40 md:h-56 lg:h-[320px] bg-center bg-cover bg-no-repeat"
+    style={{ backgroundImage: `url(${heroBg})` }}
+  >
+    <img
+      src={vectorOverlay}
+      alt=""
+      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-32 md:h-44 lg:h-56 w-auto object-contain pointer-events-none select-none"
+    />
+  </div>
 
-          <div className="flex justify-center gap-3 mt-6">
-            <button
-              onClick={() => setFilter('all')}
-              className={`px-4 py-2 rounded-md font-medium transition ${filter === 'all' ? 'bg-primary text-white' : 'bg-white/5 text-accent-lavender'}`}>
-              All
-            </button>
-            <button
-              onClick={() => setFilter('frontend')}
-              className={`px-4 py-2 rounded-md font-medium transition ${filter === 'frontend' ? 'bg-primary text-white' : 'bg-white/5 text-accent-lavender'}`}>
-              Frontend Development
-            </button>
-            <button
-              onClick={() => setFilter('ai')}
-              className={`px-4 py-2 rounded-md font-medium transition ${filter === 'ai' ? 'bg-primary text-white' : 'bg-white/5 text-accent-lavender'}`}>
-              AI Projects
-            </button>
-            <button
-              onClick={() => setFilter('uiux')}
-              className={`px-4 py-2 rounded-md font-medium transition ${filter === 'uiux' ? 'bg-primary text-white' : 'bg-white/5 text-accent-lavender'}`}>
-              UI/UX Design
-            </button>
-          </div>
-        </motion.div>
+  <div className="relative -mt-6 md:-mt-8 flex justify-center">
+    <div className="bg-white rounded-xl border border-black/10 shadow-[0_8px_18px_rgba(0,0,0,0.12)] px-3 md:px-4 py-2 md:py-3 inline-flex items-center gap-3 md:gap-6">
+      <button
+        onClick={() => setActive('all')}
+        className={`${active === 'all' ? 'bg-[#FF4A3B] text-white' : 'text-black'} px-3 py-2 rounded-[10px] text-sm font-['Space_Mono',monospace] transition-colors`}
+      >
+        All
+      </button>
+      <button
+        onClick={() => setActive('frontend')}
+        className={`${active === 'frontend' ? 'bg-[#FF4A3B] text-white' : 'text-black'} px-3 py-2 rounded-[10px] text-sm font-['Space_Mono',monospace] transition-colors`}
+      >
+        Front-End
+      </button>
+      <button
+        onClick={() => setActive('ai')}
+        className={`${active === 'ai' ? 'bg-[#FF4A3B] text-white' : 'text-black'} px-3 py-2 rounded-[10px] text-sm font-['Space_Mono',monospace] transition-colors`}
+      >
+        AI-Projects
+      </button>
+      <button
+        onClick={() => setActive('uiux')}
+        className={`${active === 'uiux' ? 'bg-[#FF4A3B] text-white' : 'text-black'} px-3 py-2 rounded-[10px] text-sm font-['Space_Mono',monospace] transition-colors`}
+      >
+        UI/UX-Design
+      </button>
+    </div>
+  </div>
 
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.8, delay: index * 0.06 }}
-              className="project-card group relative overflow-hidden"
-            >
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} rounded-xl mb-6 relative overflow-hidden`}>
-                {project.image ? (
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className={`absolute inset-0 w-full h-full rounded-xl ${project.imageFit === 'contain' ? 'object-contain p-4 bg-white/5' : 'object-cover'}`}
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-black/20" />
-                )}
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-sm font-medium text-white">
-                    {project.category}
-                  </span>
-                </div>
-                <div className="absolute bottom-4 right-4 text-white/60 font-medium">{project.year}</div>
+  {active === 'all' && (
+    <div className="mt-8 md:mt-10 px-4 md:px-6">
+      <div className="overflow-x-auto no-scrollbar">
+        <div className="flex gap-5 md:gap-7 lg:gap-10 snap-x snap-mandatory pb-4">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div key={`card-${i}`} className="snap-center shrink-0 w-[280px] md:w-[360px] lg:w-[420px]">
+              <div className={`relative bg-white rounded-2xl border border-black/10 shadow-[0_12px_28px_rgba(0,0,0,0.18)] p-3 md:p-4 transform ${i % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
+                <img src="/placeholder.svg" alt="project" className="w-full h-[180px] md:h-[220px] lg:h-[260px] object-cover rounded-xl" />
               </div>
-
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-accent-lavender group-hover:text-primary transition-colors duration-300">
-                  {project.title}
-                </h3>
-
-                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {project.tools.map((tool) => (
-                    <span key={tool} className="inline-flex items-center gap-1 px-2 py-1 bg-primary/10 text-accent-lavender text-xs rounded-md border border-primary/20">
-                      {getToolIcon(tool)}
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center">
-                  {project.link && (
-                    <motion.a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-2 text-primary hover:text-accent-rose transition-colors duration-300 font-medium"
-                    >
-                      {project.link?.includes('figma.com') ? (
-                        <>
-                          <SiFigma className="w-4 h-4" />
-                          <span>View Prototype</span>
-                        </>
-                      ) : (
-                        <>
-                          <HiExternalLink className="w-4 h-4" />
-                          <span>View Project</span>
-                        </>
-                      )}
-                    </motion.a>
-                  )}
-
-                  {project.github && (
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center gap-2 ml-4 text-primary hover:text-accent-rose transition-colors duration-300 font-medium"
-                    >
-                      <FaGithub className="w-4 h-4" />
-                      <span>View on GitHub</span>
-                    </motion.a>
-                  )}
-                </div>
-              </div>
-
-              <div className="project-overlay">
-                <div className="text-white">
-                  <h4 className="text-lg font-semibold mb-2">{project.title}</h4>
-                  <p className="text-sm opacity-90">Click to explore this project</p>
-                </div>
-              </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
+  )}
+
+  {active === 'frontend' && (
+    <div className="mt-8 md:mt-10 px-4 md:px-6">
+      <div className="overflow-x-auto no-scrollbar">
+        <div className="flex gap-5 md:gap-7 lg:gap-10 snap-x snap-mandatory pb-4">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={`frontend-${i}`} className="snap-center shrink-0 w-[280px] md:w-[360px] lg:w-[420px]">
+              <div className={`relative bg-white rounded-2xl border border-black/10 shadow-[0_12px_28px_rgba(0,0,0,0.18)] p-3 md:p-4 transform ${i % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
+                <img src="/placeholder.svg" alt="frontend project" className="w-full h-[180px] md:h-[220px] lg:h-[260px] object-cover rounded-xl" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  {active === 'ai' && (
+    <div className="mt-8 md:mt-10 px-4 md:px-6">
+      <div className="overflow-x-auto no-scrollbar">
+        <div className="flex gap-5 md:gap-7 lg:gap-10 snap-x snap-mandatory pb-4">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={`ai-${i}`} className="snap-center shrink-0 w-[280px] md:w-[360px] lg:w-[420px]">
+              <div className={`relative bg-white rounded-2xl border border-black/10 shadow-[0_12px_28px_rgba(0,0,0,0.18)] p-3 md:p-4 transform ${i % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
+                <img src="/placeholder.svg" alt="ai project" className="w-full h-[180px] md:h-[220px] lg:h-[260px] object-cover rounded-xl" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+
+  {active === 'uiux' && (
+    <div className="mt-8 md:mt-10 px-4 md:px-6">
+      <div className="overflow-x-auto no-scrollbar">
+        <div className="flex gap-5 md:gap-7 lg:gap-10 snap-x snap-mandatory pb-4">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={`uiux-${i}`} className="snap-center shrink-0 w-[280px] md:w-[360px] lg:w-[420px]">
+              <div className={`relative bg-white rounded-2xl border border-black/10 shadow-[0_12px_28px_rgba(0,0,0,0.18)] p-3 md:p-4 transform ${i % 2 === 0 ? 'rotate-2' : '-rotate-2'}`}>
+                <img src="/placeholder.svg" alt="uiux project" className="w-full h-[180px] md:h-[220px] lg:h-[260px] object-cover rounded-xl" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+</section>
+
+
   );
 };
 

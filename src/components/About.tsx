@@ -7,7 +7,7 @@ import softFlowerIcon from '../assets/Soft Flower.png';
 
 const About = () => {
   return (
-    <section id="about" className="relative pt-20 md:pt-20 pb-16 md:pb-24 px-6">
+    <section id="about" className="relative pt-20 md:pt-20 pb-0 md:pb-0 px-6">
       <div className="container mx-auto max-w-6xl relative">
         <h1 className="text-[72px] tracking-wide font-['Italiana',serif] text-black mb-20 text-center">
           <span className="relative inline-block">
@@ -70,7 +70,7 @@ const About = () => {
           </div>
         </div>
         {/* Blue stripe like in Hero */}
-        <div className="relative my-12">
+        <div className="relative z-10 mt-12 mb-0">
           <style>{`
             @keyframes about-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
           `}</style>
