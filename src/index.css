@@ -231,6 +231,39 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
   }
+
+  /* Multi-color aura shadows for project cards */
+  .shadow-aura {
+    box-shadow:
+      0 10px 24px rgba(255, 74, 59, 0.16),   /* coral/pink */
+      0 18px 40px rgba(89, 194, 240, 0.20),  /* blue */
+      0 6px 18px rgba(255, 230, 109, 0.22);  /* yellow */
+  }
+  .shadow-aura-strong {
+    box-shadow:
+      0 14px 28px rgba(255, 74, 59, 0.22),
+      0 26px 56px rgba(89, 194, 240, 0.28),
+      0 10px 24px rgba(255, 230, 109, 0.28);
+  }
+
+  /* Individual color shadows */
+  .shadow-pink { box-shadow: 0 12px 28px rgba(255,74,59,0.22); }
+  .shadow-blue { box-shadow: 0 16px 36px rgba(89,194,240,0.24); }
+  .shadow-yellow { box-shadow: 0 10px 24px rgba(255,230,109,0.28); }
+
+  /* Stronger on hover via parent .group */
+  .group:hover .shadow-pink { box-shadow: 0 18px 44px rgba(255,74,59,0.32); }
+  .group:hover .shadow-blue { box-shadow: 0 24px 56px rgba(89,194,240,0.34); }
+  .group:hover .shadow-yellow { box-shadow: 0 16px 38px rgba(255,230,109,0.36); }
+
+  /* Neutral base shadow and hover-only colored variants */
+  .shadow-grey { box-shadow: 0 12px 28px rgba(0,0,0,0.14); }
+  .hover-shadow-pink { box-shadow: 0 12px 28px rgba(0,0,0,0.14); }
+  .hover-shadow-blue { box-shadow: 0 12px 28px rgba(0,0,0,0.14); }
+  .hover-shadow-yellow { box-shadow: 0 12px 28px rgba(0,0,0,0.14); }
+  .group:hover .hover-shadow-pink { box-shadow: 0 20px 48px rgba(255,79,163,0.28); }
+  .group:hover .hover-shadow-blue { box-shadow: 0 24px 56px rgba(89,194,240,0.34); }
+  .group:hover .hover-shadow-yellow { box-shadow: 0 16px 38px rgba(255,230,109,0.36); }
 }
 
 /* Keyframe animations */
