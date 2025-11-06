@@ -131,8 +131,8 @@ const Hero = () => {
             Frontend developer
           </div>
           <div
-            className="text-black/80"
-            style={{ fontSize: '36px', marginTop: '2px', fontStyle: 'italic' }}
+            className="font-['Italiana',serif] text-black/90"
+            style={{ fontSize: '36px', letterSpacing: '0.06em', marginTop: '2px' }}
           >
             &
           </div>

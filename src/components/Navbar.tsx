@@ -75,7 +75,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 bg-transparent pt-6 transition-transform duration-300 ${hidden ? '-translate-y-full' : 'translate-y-0'}`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent pt-6">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-center relative">
           {/* Centered White Rectangle with Navigation */}

@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { HiAcademicCap, HiBriefcase, HiStar } from 'react-icons/hi';
+import { HiAcademicCap, HiBriefcase } from 'react-icons/hi';
+import Arrow01 from '../assets/Arrow_01.png';
+import Dawn from '../assets/Dawn.png';
+import Spiral from '../assets/Spiral 1.png';
 
 const Experience = () => {
   const ref = useRef(null);
@@ -29,7 +32,7 @@ const Experience = () => {
     {
       type: 'work',
       title: 'UI/UX Design ',
-      organization: 'PFreelance Projects',
+      organization: 'Personal Projects',
       period: '2023 - Present',
       description: 'Designed user interfaces for mobile applications, conducted user research, and created comprehensive design systems for multiple projects.',
       icon: HiBriefcase,
@@ -46,8 +49,35 @@ const Experience = () => {
     }
   ];
 
+  const mapAccent = (type: string) =>
+    type === 'education' ? 'emerald' : 'pink';
+
+  const leftCards = experiences
+    .filter((_, i) => i % 2 === 0)
+    .map((e) => ({
+      accent: mapAccent(e.type),
+      title: e.title,
+      org: e.organization,
+      icon: e.icon,
+      type: e.type,
+      period: e.period,
+      description: e.description,
+    }));
+
+  const rightCards = experiences
+    .filter((_, i) => i % 2 === 1)
+    .map((e) => ({
+      accent: mapAccent(e.type),
+      title: e.title,
+      org: e.organization,
+      icon: e.icon,
+      type: e.type,
+      period: e.period,
+      description: e.description,
+    }));
+
   return (
-    <section id="experience" className="py-20 px-6" ref={ref}>
+    <section id="experience" className="relative pt-20 pb-[160px] px-6" ref={ref}>
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -55,73 +85,155 @@ const Experience = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+          <h2 className="text-[72px] tracking-wide font-['Italiana',serif] text-black mb-6 text-center">
             Experience & Education
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            My journey through design, technology, and continuous learning
-          </p>
         </motion.div>
 
-        <div className="relative">
-          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-accent-magenta to-primary-end opacity-30" />
+        <div className="relative md:grid md:grid-cols-2 gap-16">
+          <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-full w-px bg-neutral-200" />
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => {
-              const Icon = exp.icon;
-              const isEven = index % 2 === 0;
-              
+          <div className="space-y-24 md:pr-8">
+            {leftCards.map((c, i) => {
+              const Icon = c.icon;
+              const next = leftCards[i + 1];
+              const border = c.accent === 'pink' ? 'border-pink-400' : 'border-emerald-400';
+              const shadow = c.accent === 'pink'
+                ? 'shadow-[8px_8px_0_0_rgba(236,72,153,0.25)]'
+                : 'shadow-[8px_8px_0_0_rgba(16,185,129,0.25)]';
+              const pill = c.accent === 'pink' ? 'bg-pink-200 text-pink-700' : 'bg-emerald-200 text-emerald-700';
               return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isEven ? -50 : 50 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className={`relative flex items-center ${
-                    isEven ? 'md:flex-row' : 'md:flex-row-reverse'
-                  } flex-col md:flex-row`}
-                >
-
-                  <div className="absolute left-8 md:left-1/2 transform md:-translate-x-1/2 -translate-y-0 z-10">
-                    <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${exp.color} p-4 border-4 border-background shadow-lg`}>
-                      <Icon className="w-full h-full text-white" />
+                <>
+                  <motion.div
+                    key={`l-${i}`}
+                    initial={{ opacity: 0, x: -40 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
+                    transition={{ duration: 0.6, delay: i * 0.15 }}
+                    className={`relative rounded-2xl border-[3px] ${border} bg-white p-7 ${shadow} hover:-translate-y-1 transition-transform`}
+                  >
+                    <div className="flex gap-4 mb-6">
+                      <span className={`px-4 py-1 rounded-full text-sm ${pill}`}>{c.type}</span>
+                      <span className={`px-4 py-1 rounded-full text-sm ${pill} opacity-70`}>{c.period}</span>
                     </div>
-                  </div>
-
-                  <div className={`w-full md:w-5/12 ${isEven ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'} ml-20 md:ml-0`}>
-                    <div className="card-aura p-6 rounded-2xl">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="px-3 py-1 text-xs font-medium bg-primary/20 text-accent-lavender rounded-full">
-                          {exp.period}
-                        </span>
-                        <span className={`px-2 py-1 text-xs rounded-md ${
-                          exp.type === 'education' ? 'bg-accent-lavender/20 text-accent-lavender' :
-                          exp.type === 'work' ? 'bg-accent-rose/20 text-accent-rose' :
-                          'bg-accent-magenta/20 text-accent-magenta'
-                        }`}>
-                          {exp.type}
-                        </span>
+                    <div className="flex items-start gap-3">
+                      <div className={`mt-1 text-${c.accent}-500`}><Icon className="w-6 h-6" /></div>
+                      <div>
+                        <h3 className="text-2xl font-medium text-primary mb-2">{c.title}</h3>
+                        <p className="tracking-wide text-muted-foreground">{c.org}</p>
+                        <p className="text-muted-foreground leading-relaxed mt-3">{c.description}</p>
                       </div>
-                      
-                      <h3 className="text-xl font-semibold text-accent-lavender mb-2">
-                        {exp.title}
-                      </h3>
-                      
-                      <p className="text-primary font-medium mb-3">
-                        {exp.organization}
-                      </p>
-                      
-                      <p className="text-muted-foreground leading-relaxed">
-                        {exp.description}
-                      </p>
                     </div>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                  {['work','Remote Internship'].includes(c.type) && next && ['work','Remote Internship'].includes(next.type) && (
+                    <img key={`spiral-between-${i}`} src={Spiral} alt="spiral" className="mx-auto w-32 opacity-70" />
+                  )}
+                </>
               );
             })}
+
+          </div>
+
+          <div className="space-y-24 mt-20 md:mt-0 md:pl-8">
+            <motion.img
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
+              transition={{ duration: 0.6 }}
+              src={Arrow01}
+              alt="arrow"
+              className="w-36 ml-10 mb-3 opacity-70"
+            />
+
+            {rightCards.map((c, i) => {
+              const Icon = c.icon;
+              const next = rightCards[i + 1];
+              return (
+                <>
+                  <motion.div
+                    key={`r-${i}`}
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
+                    transition={{ duration: 0.6, delay: i * 0.15 }}
+                    className={`relative rounded-2xl border-[3px] border-blue-500 bg-white p-7 shadow-[8px_8px_0_0_rgba(59,130,246,0.25)] hover:-translate-y-1 transition-transform`}
+                  >
+                    <div className="flex gap-4 mb-6">
+                      <span className={`px-4 py-1 rounded-full text-sm bg-blue-200 text-blue-700`}>{c.type}</span>
+                      <span className={`px-4 py-1 rounded-full text-sm bg-blue-200 text-blue-700 opacity-70`}>{c.period}</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className={`mt-1 text-${c.accent}-500`}><Icon className="w-6 h-6" /></div>
+                      <div>
+                        <h3 className="text-2xl font-medium text-primary mb-2">{c.title}</h3>
+                        <p className="tracking-wide text-muted-foreground">{c.org}</p>
+                        <p className="text-muted-foreground leading-relaxed mt-3">{c.description}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                  {c.type === 'education' && next && next.type === 'education' && (
+                    <img key={`dawn-between-${i}`} src={Dawn} alt="dawn" className="w-28 ml-auto opacity-70" />
+                  )}
+                </>
+              );
+            })}
+
+            
           </div>
         </div>
       </div>
+      {/* Rotating marquee strips like in Hero */}
+
+      <style>{`
+  @keyframes hero-marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes hero-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+`}</style>
+
+<div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[150%] h-[180px] pointer-events-none">
+  {/* Blue Strip */}
+  <div className="absolute left-0 right-0 top-1/2 -translate-y-[50%] rotate-[-3.66deg] z-0">
+    <div className="relative h-14 overflow-hidden">
+      <div className="absolute inset-0 bg-[#59C2F0]" />
+      <div className="absolute inset-0 overflow-hidden flex items-center">
+        <div
+          className="flex gap-12 whitespace-nowrap h-full items-center"
+          style={{ width: '200%', animation: 'hero-marquee-left 14s linear infinite' }}
+        >
+          {Array.from({ length: 12 }).map((_, i) => (
+            <span
+              key={`hero-blue-${i}`}
+              className="font-['Italiana',serif] text-black/90 leading-none"
+              style={{ fontSize: 24, letterSpacing: '0.06em' }}
+            >
+              Experience • Education
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Pink Strip */}
+  <div className="absolute left-0 right-0 top-1/2 -translate-y-[40%] rotate-[3.66deg] z-10">
+    <div className="relative h-14 overflow-hidden">
+      <div className="absolute inset-0 bg-[#FF69B4]" />
+      <div className="absolute inset-0 overflow-hidden flex items-center">
+        <div
+          className="flex gap-12 whitespace-nowrap h-full items-center"
+          style={{ width: '200%', animation: 'hero-marquee-right 16s linear infinite' }}
+        >
+          {Array.from({ length: 12 }).map((_, i) => (
+            <span
+              key={`hero-pink-${i}`}
+              className="font-['Italiana',serif] text-black/90 leading-none"
+              style={{ fontSize: 24, letterSpacing: '0.06em' }}
+            >
+              Education • Experience
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
     </section>
   );
 };
