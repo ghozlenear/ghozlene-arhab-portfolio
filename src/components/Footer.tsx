@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaBehance, FaHeart } from 'react-icons/fa';
+import Reveal from './Reveal';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -36,7 +37,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-white border-t border-black mt-8">
+    <Reveal as="footer" className="relative bg-white border-t border-black mt-8" variant="up">
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-10">
           <div className="space-y-4 text-black">
@@ -129,7 +130,7 @@ const Footer = () => {
           <div className="h-full flex-1" style={{ background: '#FFE66D' }} />
         </div>
       </div>
-    </footer>
+    </Reveal>
   );
 };
 

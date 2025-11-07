@@ -3,6 +3,7 @@ import Asterisk from '@/assets/Asterisk.png';
 import { FaGithub, FaLinkedin, FaBehance } from 'react-icons/fa';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
+import Reveal from './Reveal';
 
 function FormMailer() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -104,10 +105,12 @@ function FormMailer() {
 
 const Contact = () => {
   return (
-    <section
+    <Reveal
+      as="section"
       id="contact"
       className="relative h-[120vh] md:h-[130vh] bg-center bg-cover bg-no-repeat -mt-12 md:-mt-16 py-0"
       style={{ backgroundImage: `url(${heroBg})` }}
+      variant="left"
     >
       <div className="container mx-auto max-w-6xl h-full px-6 pt-10 md:pt-12 pb-6 md:pb-8">
         <h2 className="text-center font-['Italiana',serif] tracking-wide text-black text-[32px] md:text-[56px]">
@@ -186,7 +189,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 };
 

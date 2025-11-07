@@ -264,6 +264,22 @@
   .group:hover .hover-shadow-pink { box-shadow: 0 20px 48px rgba(255,79,163,0.28); }
   .group:hover .hover-shadow-blue { box-shadow: 0 24px 56px rgba(89,194,240,0.34); }
   .group:hover .hover-shadow-yellow { box-shadow: 0 16px 38px rgba(255,230,109,0.36); }
+
+  /* Reveal on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1), opacity 600ms ease;
+    will-change: transform, opacity;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left { transform: translateX(-18px); }
+  .reveal-left.is-visible { transform: translateX(0); }
+  .reveal-right { transform: translateX(18px); }
+  .reveal-right.is-visible { transform: translateX(0); }
 }
 
 /* Keyframe animations */

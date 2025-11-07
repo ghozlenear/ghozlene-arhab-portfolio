@@ -8,10 +8,11 @@ import arrow from '../assets/arrow.png';
 import shape2 from '../assets/shape2.png';
 import portrait from '../assets/picture.png';
 import pf from '../assets/pf.jpg';
+import Reveal from './Reveal';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative h-screen flex flex-col overflow-visible bg-white">
+    <Reveal as="section" id="home" className="relative h-screen flex flex-col overflow-visible bg-white" variant="up">
       {/* Grid Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100"
@@ -220,7 +221,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Reveal>
   );
 };
 

@@ -1,28 +1,36 @@
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+
 import { useRef, useState } from 'react';
 import { HiExternalLink, HiCode } from 'react-icons/hi';
 import { SiFigma } from 'react-icons/si';
 import { FaGithub } from 'react-icons/fa';
-import { SiPython, SiTensorflow, SiFlutter, SiPostgresql } from 'react-icons/si';
 import miraeImg from '../assets/mirae.png';
 import hearmeImg from '../assets/hearme.png';
 import karieraImg from '../assets/kariera.png';
-import aiObjectImg from '../assets/ai-object-detection.svg';
-import aiBreastImg from '../assets/ai-breast-cancer.svg';
-import aiMovieImg from '../assets/ai-movie-recommendation.svg';
-import aiFacialImg from '../assets/ai-facial-expression.svg';
 import objectDetectionPng from '../assets/objectdetection.png';
 import breastCancerPng from '../assets/breastcancer.png';
 import moviePng from '../assets/movie.png';
 import facialPng from '../assets/facial.png';
 import heroBg from '../assets/hero-bg.png';
 import vectorOverlay from '../assets/Vector.png';
+import portfolioImg from '../assets/potfolio.png';
 
 const Projects = () => {
   const [active, setActive] = useState<'all' | 'frontend' | 'ai' | 'uiux'>('all');
 
   const projects = [
+    {
+      title: 'Portfolio',
+      year: '2025',
+      category: 'UI/UX, Frontend',
+      description: 'A redesign version of my personal portfolio.',
+      tools: ['Figma', 'React', 'Tailwind CSS'],
+      link: 'https://www.figma.com/design/TKqaZJXDFWuLd4RCxZJH7O/ghozlene-portfolio?node-id=1-2&t=0BTICaad0XzvkGCo-1',
+      github: 'https://github.com/ghozlenear/ghozlene-arhab-portfolio',
+      gradient: 'from-accent-rose to-primary',
+      image: portfolioImg,
+      imageFit: 'contain',
+      tags: ['uiux', 'frontend'],
+    },
     {
       title: 'Kariera',
       year: '2025',
@@ -114,7 +122,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="-mt-6 md:-mt-8 py-0">
-      <div
+       <div
         className="relative z-0 w-full h-40 md:h-56 lg:h-[320px] bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
   >

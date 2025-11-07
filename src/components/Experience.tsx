@@ -5,6 +5,7 @@ import { HiAcademicCap, HiBriefcase } from 'react-icons/hi';
 import Arrow01 from '../assets/Arrow_01.png';
 import Dawn from '../assets/Dawn.png';
 import Spiral from '../assets/Spiral 1.png';
+import Reveal from './Reveal';
 
 const Experience = () => {
   const ref = useRef(null);
@@ -78,6 +79,7 @@ const Experience = () => {
 
   return (
     <section id="experience" className="relative pt-20 pb-[160px] px-6" ref={ref}>
+      <Reveal as="div" variant="up">
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -179,6 +181,7 @@ const Experience = () => {
           </div>
         </div>
       </div>
+      </Reveal>
       {/* Rotating marquee strips like in Hero */}
 
       <style>{`
