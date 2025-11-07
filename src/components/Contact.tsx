@@ -109,7 +109,7 @@ const Contact = () => {
       className="relative h-[120vh] md:h-[130vh] bg-center bg-cover bg-no-repeat -mt-12 md:-mt-16 py-0"
       style={{ backgroundImage: `url(${heroBg})` }}
     >
-      <div className="container mx-auto max-w-6xl h-full px-6 pt-10 md:pt-12 pb-12 md:pb-16">
+      <div className="container mx-auto max-w-6xl h-full px-6 pt-10 md:pt-12 pb-6 md:pb-8">
         <h2 className="text-center font-['Italiana',serif] tracking-wide text-black text-[32px] md:text-[56px]">
           LET’S WORK TOGETHER
         </h2>
@@ -122,7 +122,7 @@ const Contact = () => {
 
           <div className="w-full lg:col-span-5 flex flex-col gap-2">
             <div className="relative w-full rounded-[22px] bg-white/70 backdrop-blur-md border-2 border-sky-500 shadow-[0_16px_40px_rgba(59,130,246,0.25)] p-5 md:p-6 min-h-[28vh]">
-              <h3 className="text-2xl font-semibold text-black mb-4">Get in Touch</h3>
+              <h3 className="text-2xl font-semibold font-['Italiana',serif] text-black mb-4">Get in Touch</h3>
 
               <div className="space-y-5">
                 <div>

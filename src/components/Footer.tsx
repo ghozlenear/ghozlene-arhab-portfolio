@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaBehance, FaTwitter, FaHeart } from 'react-icons/fa';
-
+import { FaLinkedin, FaGithub, FaBehance, FaHeart } from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -31,31 +30,26 @@ const Footer = () => {
   ];
 
   const handleNavClick = (href: string) => {
+    window.location.hash = href;
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <footer className="relative bg-card/50 backdrop-blur-md border-t border-border/30 mt-20">
-      <div className="absolute top-0 right-0 opacity-5 pointer-events-none">
-        
-
-      </div>
-
+    <footer className="relative bg-white border-t border-black mt-8">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="space-y-4">
-            <motion.h3 
-              className="text-2xl font-bold gradient-text"
-              whileHover={{ scale: 1.05 }}
+        <div className="grid md:grid-cols-3 gap-10">
+          <div className="space-y-4 text-black">
+            <motion.h3
+              className="font-['Italiana',serif] text-3xl leading-none tracking-tight"
+              whileHover={{ scale: 1.03 }}
             >
               Ghozlene Arhab
             </motion.h3>
-            <p className="text-muted-foreground leading-relaxed">
-              UI/UX Designer & AI Engineer passionate about creating beautiful, 
-              intelligent digital experiences that make a difference.
+            <p className="font-['Space_Mono',monospace] text-sm leading-relaxed text-black/70">
+              Frontend developer & AI Engineer
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -64,12 +58,12 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-10 h-10 bg-primary/20 hover:bg-primary/30 rounded-lg p-2 text-accent-lavender hover:text-primary transition-all duration-300"
+                    className="w-10 h-10 rounded-full border border-black flex items-center justify-center bg-white text-black hover:text-[#FF4A3B] hover:border-[#FF4A3B] transition-colors"
                     aria-label={social.name}
                   >
-                    <Icon className="w-full h-full" />
+                    <Icon className="w-5 h-5" />
                   </motion.a>
                 );
               })}
@@ -77,56 +71,64 @@ const Footer = () => {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-accent-lavender">Quick Links</h4>
+            <h4 className="font-['Italiana',serif] text-lg text-black">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <button
                     onClick={() => handleNavClick(link.href)}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                    className="font-['Space_Mono',monospace] text-sm text-black/70 hover:text-[#FF4A3B] transition-colors"
                   >
-                    {link.name}
+                    _{link.name.toLowerCase()}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
+
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-accent-lavender">Let's Connect</h4>
-            <div className="space-y-2 text-muted-foreground">
+            <h4 className="font-['Italiana',serif] text-lg text-black">Let's Connect</h4>
+            <div className="space-y-2 text-black/70">
               <p>
-                <a 
-                  href="mailto:ghozlene.arhab@example.com"
-                  className="hover:text-primary transition-colors duration-300"
+                <a
+                  href="mailto:ghozlenearhab@gmail.com"
+                  className="font-['Space_Mono',monospace] hover:text-[#FF4A3B] transition-colors"
                 >
                   ghozlenearhab@gmail.com
                 </a>
               </p>
-              <p>Annaba,Algeria</p>
-              <p>Available for Work</p>
+              <p className="font-['Space_Mono',monospace]">Annaba, Algeria</p>
+              <p className="font-['Space_Mono',monospace]">Available for work</p>
             </div>
           </div>
         </div>
-        <div className="my-8 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-          <p className="flex items-center gap-1">
-            © {currentYear} Ghozlene Arhab. Made with 
-            <FaHeart className="text-accent-rose w-4 h-4" /> 
-            and lots of coffee.
+        <div className="my-10 h-px bg-black" />
+
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-black/70">
+          <p className="flex items-center gap-2">
+            {currentYear} Ghozlene Arhab — made with
+            <FaHeart className="text-[#FF69B4] w-4 h-4" />
+            and coffee
           </p>
           <div className="flex gap-6">
-            <button 
+            <button
               onClick={() => handleNavClick('#home')}
-              className="hover:text-primary transition-colors duration-300"
+              className="font-['Space_Mono',monospace] hover:text-[#FF4A3B] transition-colors"
             >
-              Back to Top
+              _back-to-top
             </button>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-3 overflow-hidden">
+        <div className="h-full w-full flex">
+          <div className="h-full flex-1" style={{ background: '#59C2F0' }} />
+          <div className="h-full flex-1" style={{ background: '#FF69B4' }} />
+          <div className="h-full flex-1" style={{ background: '#FFE66D' }} />
+        </div>
+      </div>
     </footer>
   );
 };
