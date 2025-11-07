@@ -186,7 +186,7 @@ const Experience = () => {
   @keyframes hero-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 `}</style>
 
-<div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[150%] h-[180px] pointer-events-none">
+<div className="absolute left-1/2 bottom-0 -translate-x-1/2 w-[150%] h-[180px] pointer-events-none z-20">
   {/* Blue Strip */}
   <div className="absolute left-0 right-0 top-1/2 -translate-y-[50%] rotate-[-3.66deg] z-0">
     <div className="relative h-14 overflow-hidden">
