@@ -12,17 +12,19 @@ import Reveal from './Reveal';
 
 const Hero = () => {
   return (
-    <Reveal as="section" id="home" className="relative h-screen flex flex-col overflow-visible bg-white" variant="up">
+    <Reveal as="section" id="home" className="relative min-h-[520px] md:min-h-[640px] pb-[160px] md:pb-0 flex flex-col overflow-hidden bg-white" variant="up">
+
       {/* Grid Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100"
+        className="absolute left-0 right-0 top-0 h-[280px] sm:h-[320px] md:h-[460px] lg:h-[500px] bg-cover bg-center bg-no-repeat opacity-100"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
 
       <img
         src={shape1}
         alt=""
-        className="absolute select-none pointer-events-none z-0"
+        className="absolute select-none pointer-events-none z-0 hidden md:block"
+
         style={{
           top: 'calc(1.5rem + 5rem/2)', 
           transform: 'translateY(-50%)',
@@ -36,7 +38,8 @@ const Hero = () => {
       <img
         src={yellowArrow}
         alt=""
-        className="absolute select-none pointer-events-none z-0 object-contain"
+        className="absolute select-none pointer-events-none z-0 object-contain hidden md:block"
+
         style={{
           top: 'calc(1.5rem + 11rem/2)',
           transform: 'translateY(-50%)',
@@ -52,6 +55,7 @@ const Hero = () => {
         src={blobShape}
         alt=""
         className="absolute select-none pointer-events-none z-0"
+
         style={{
           top: '135px',
           left: 'calc(50% - 60px)',
@@ -63,6 +67,7 @@ const Hero = () => {
 
       <div
         className="absolute z-10"
+
         style={{
           top: '115px',
           left: 'calc(50% - 60px)',
@@ -88,7 +93,8 @@ const Hero = () => {
       <img
         src={arrow}
         alt=""
-        className="absolute select-none pointer-events-none z-20"
+        className="absolute select-none pointer-events-none z-20 hidden md:block"
+
         style={{
           top: '310px',
           left: 'calc(50% + 25px)',
@@ -101,7 +107,8 @@ const Hero = () => {
       <img
         src={shape2}
         alt=""
-        className="absolute select-none pointer-events-none z-20"
+        className="absolute select-none pointer-events-none z-20 hidden md:block"
+
         style={{
           top: '120px',
           left: '370px',
@@ -112,7 +119,8 @@ const Hero = () => {
       />
 
       <div
-        className="absolute z-10 text-black"
+        className="absolute z-10 text-black hidden md:block"
+
         style={{
           top: '150px',
           left: 'calc(50% + 50px)'
@@ -147,15 +155,16 @@ const Hero = () => {
       </div>
 
       {/* Main HELLO heading with red circle overlay */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 mt-[170px] ml-[30px]">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 mt-[140px] md:mt-[170px] md:ml-[30px]">
         <div className="relative inline-block">
-          <h1 className="font-['Italiana',serif] text-black leading-[0.9] text-[60px] md:text-[96px] lg:text-[90px] tracking-tight">
+          <h1 className="font-['Italiana',serif] text-black leading-[0.9] text-[44px] sm:text-[56px] md:text-[96px] lg:text-[90px] tracking-tight">
             HELLO,
           </h1>
           <img
             src={redCircle}
             alt=""
-            className="absolute pointer-events-none select-none"
+            className="absolute pointer-events-none select-none hidden md:block"
+
             style={{
               top: '30%',
               left: '52%',
@@ -167,13 +176,14 @@ const Hero = () => {
           />
         </div>
         {/* Subtext under HELLO */}
-        <p className="mt-6 text-black font-['Space_Mono',monospace] text-[14px] leading-relaxed max-w-md">
+        <p className="mt-4 md:mt-6 text-black font-['Space_Mono',monospace] text-[14px] leading-relaxed max-w-md">
           Crafting beautiful, intuitive
           <br />
           digital experiences with a
           <br />
           touch of AI magic.
         </p>
+
         <p className="mt-2 font-['Space_Mono',monospace] text-[#FF4A3B] italic text-[14px]">
           currently living in Annaba
         </p>
@@ -192,7 +202,7 @@ const Hero = () => {
         @keyframes hero-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
       `}</style>
 
-      <div className="absolute left-1/2 -translate-x-1/2 w-[140%]" style={{ top: 520 }}>
+      <div className="absolute inset-x-0 md:left-1/2 md:-translate-x-1/2 w-screen md:w-[140%] bottom-[96px] md:top-[520px] md:bottom-auto">
         <div className="relative h-14 overflow-hidden" style={{ transform: 'rotate(-3.66deg)' }}>
           <div className="absolute inset-0" style={{ background: '#59C2F0' }} />
           <div className="absolute inset-0 overflow-hidden flex items-center">
@@ -207,7 +217,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute left-1/2 -translate-x-1/2 w-[140%]" style={{ top: 528 }}>
+      <div className="absolute inset-x-0 md:left-1/2 md:-translate-x-1/2 w-screen md:w-[140%] bottom-[40px] md:top-[528px] md:bottom-auto">
         <div className="relative h-14 overflow-hidden" style={{ transform: 'rotate(3.66deg)' }}>
           <div className="absolute inset-0" style={{ background: '#FF69B4' }} />
           <div className="absolute inset-0 overflow-hidden flex items-center">
@@ -221,6 +231,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
     </Reveal>
   );
 };

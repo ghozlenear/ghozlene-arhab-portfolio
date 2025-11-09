@@ -13,6 +13,8 @@ import facialPng from '../assets/facial.png';
 import heroBg from '../assets/hero-bg.png';
 import vectorOverlay from '../assets/Vector.png';
 import portfolioImg from '../assets/potfolio.png';
+import yellowFlower from '../assets/rellow flower.png';
+import pinkFlower from '../assets/flower.png';
 
 const Projects = () => {
   const [active, setActive] = useState<'all' | 'frontend' | 'ai' | 'uiux'>('all');
@@ -24,7 +26,7 @@ const Projects = () => {
       category: 'UI/UX, Frontend',
       description: 'A redesign version of my personal portfolio.',
       tools: ['Figma', 'React', 'Tailwind CSS'],
-      link: 'https://www.figma.com/design/TKqaZJXDFWuLd4RCxZJH7O/ghozlene-portfolio?node-id=1-2&t=0BTICaad0XzvkGCo-1',
+      link: 'https://www.figma.com/proto/TKqaZJXDFWuLd4RCxZJH7O/ghozlene-portfolio?page-id=0%3A1&node-id=1-2&p=f&viewport=112%2C-631%2C0.38&t=7AJRdUOz9F4Y1rCl-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A2',
       github: 'https://github.com/ghozlenear/ghozlene-arhab-portfolio',
       gradient: 'from-accent-rose to-primary',
       image: portfolioImg,
@@ -121,20 +123,32 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="-mt-6 md:-mt-8 py-0">
+    <section id="projects" className="-mt-12 sm:-mt-16 md:-mt-20 lg:-mt-24 py-0">
        <div
-        className="relative z-0 w-full h-40 md:h-56 lg:h-[320px] bg-center bg-cover bg-no-repeat"
+        className="relative z-0 w-full h-56 md:h-72 lg:h-[420px] bg-center bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
-  >
-    <img
-      src={vectorOverlay}
-      alt=""
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-32 md:h-44 lg:h-56 w-auto object-contain pointer-events-none select-none"
-    />
-  </div>
+      >
+        <img
+          src={vectorOverlay}
+          alt=""
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-48 md:h-64 lg:h-80 w-auto object-contain pointer-events-none select-none"
+        />
+        <h2 className="absolute inset-x-0 top-1/2 -translate-y-[150%] text-center font-['Italiana',serif] text-black text-[40px] sm:text-[52px] md:text-[64px] lg:text-[72px]">
+          Projects
+        </h2>
+        <img
+          src={yellowFlower}
+          alt=""
+          className="absolute left-6 sm:left-10 top-1/2 -translate-y-1/2 w-10 sm:w-12 md:w-16 lg:w-20 pointer-events-none select-none"
+        />
+        <img
+          src={pinkFlower}
+          alt=""
+          className="absolute right-6 sm:right-10 bottom-4 md:bottom-6 w-10 sm:w-12 md:w-16 lg:w-20 pointer-events-none select-none"
+        />
+      </div>
 
-
-  <div className="relative -mt-6 md:-mt-8 flex justify-center">
+      <div className="relative -mt-6 md:-mt-8 flex justify-center">
         <div className="bg-white rounded-xl border border-black/10 shadow-[0_8px_18px_rgba(0,0,0,0.12)] px-3 md:px-4 py-2 md:py-3 inline-flex items-center gap-3 md:gap-6">
           <button
             onClick={() => setActive('all')}

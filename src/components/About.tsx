@@ -8,7 +8,7 @@ import Reveal from './Reveal';
 
 const About = () => {
   return (
-    <section id="about" className="relative pt-20 md:pt-20 pb-0 md:pb-0 px-6">
+    <section id="about" className="relative z-[50] pt-8 md:pt-20 pb-0 md:pb-0 px-6 -translate-y-[10%]">
       <div className="container mx-auto max-w-6xl relative">
         <Reveal as="div" variant="left">
           <h1 className="text-[72px] tracking-wide font-['Italiana',serif] text-black mb-20 text-center">
@@ -73,7 +73,7 @@ const About = () => {
           </div>
         </Reveal>
         {/* Blue stripe like in Hero */}
-        <div className="relative z-10 mt-12 mb-0">
+        <div className="relative z-[100] mt-12 -mb-10 md:-mb-14">
           <style>{`
             @keyframes about-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
           `}</style>
