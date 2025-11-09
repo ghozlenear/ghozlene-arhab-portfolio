@@ -39,9 +39,9 @@ const Footer = () => {
   };
 
   return (
-    <Reveal as="footer" className="relative bg-white border-t border-black mt-8" variant="up">
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-10">
+    <Reveal as="footer" className="relative bg-white border-t border-black mt-0" variant="up">
+      <div className="container mx-auto px-6 py-6 md:py-8">
+        <div className="grid md:grid-cols-3 gap-8">
           <div className="space-y-4 text-black">
             <motion.h3
               className="font-['Italiana',serif] text-3xl leading-none tracking-tight"
@@ -106,7 +106,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="my-10 h-px bg-black" />
+        <div className="my-6 md:my-8 h-px bg-black" />
 
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-black/70">
           <p className="flex items-center gap-2">
