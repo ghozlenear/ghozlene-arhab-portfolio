@@ -180,7 +180,7 @@ const Projects = () => {
       {(() => {
         const visible = projects.filter(p => active === 'all' ? true : p.tags?.includes(active));
         return (
-          <div className="mt-8 md:mt-10 px-4 md:px-6">
+          <div className="mt-8 md:mt-10 pl-0 md:pl-0 pr-0">
             <div className="relative">
               {/* Side fades */}
               <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-white to-transparent"></div>

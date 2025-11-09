@@ -31,9 +31,11 @@ const Footer = () => {
   ];
 
   const handleNavClick = (href: string) => {
-    window.location.hash = href;
     const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (element) {
+      (element as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+      window.history.pushState(null, '', href);
+    }
   };
 
   return (

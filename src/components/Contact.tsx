@@ -108,7 +108,7 @@ const Contact = () => {
     <Reveal
       as="section"
       id="contact"
-      className="relative h-[120vh] md:h-[130vh] bg-center bg-cover bg-no-repeat -mt-12 md:-mt-16 py-0"
+      className="relative h-[100vh] md:h-[110vh] bg-center bg-cover bg-no-repeat -mt-12 md:-mt-16 py-0"
       style={{ backgroundImage: `url(${heroBg})` }}
       variant="left"
     >
